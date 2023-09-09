@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/********************************************* HEADER CSS STARTS HERE **********************************/
+
+.navbar {
+    margin: 0.5em auto;
+    width: 100%;
+    height: 5em;
+    background-color: #FFF9FA;
+    box-shadow: 0px 5px 20px 0px #FFF;  
+    text-transform: uppercase;
+}
+
+
+.navbar-nav li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    padding: 10px 10px;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 142.857%;
+}
+
+.navbar ul li a:hover {
+    color: #FD5F77;
+    transition: .7s;
+}
+
+.customize {
+    border-radius: 2rem;
+    border: 2px solid #FD5F77;
+    background: none;
+    color: #FD5F77;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.customize:hover {
+    background-color: #FD5F77;
+    color: white;
+    border: 2px solid #FD5F77;
+    transition: .7s;
+}
+
+.navbar-brand {
+    color: #FD5F77;
+    font-family: Open Sans;
+    font-size: 2em;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 66.667%;
+}
+
+.navbar-toggler:active {
+    color: #FD5F77;
+    border: 1px solid #FD5F77;
+}
+
+@media (max-width: 992px) {
+    .collapse {
+       background-color: rgba(255, 255, 255, 0.7);
+       transition: ease-in-out 1s;
+       border-radius: 1rem;
+    }
+ }
+
+ @media (max-width: 235px) {
+    .get-started {
+        margin-top: 5px;
+    }
+ }
+
+ /* underline hover effect starts here */
+ .nav-link {
+    display: inline-block;
+    position: relative;
+ }
+
+ .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #FD5F77;
+    transform-origin: bottom center;
+    transition: transform 0.25s ease-out;
+ }
+
+ .nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+ }
+ /* underline hover effect ends here */
+
+ /****************************************** HEADER CSS ENDS HERE ********************************************/
+
+body {
+    margin-top: 100px;
+    /* Adjust this value as needed */
+}
+
+.btn-toolbar {
+    margin: 10px 0;
+}
+
+.main-card {
+    background-color: #FFF9FA;
+}
+
+.carde {
+    border-radius: 2rem;
+    margin: 0 10px 10px 10px;
+}
+
+#btn1,
+#btn2 {
+    background-color: white;
+    border-radius: 2rem;
+    border: 2px solid #FD5F77;
+    background: none;
+    color: #FD5F77;
+    font-family: Open Sans;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+#btn1,
+#btn2:hover {
+    background-color: #FD5F77;
+    color: white;
+    border: 2px solid #FD5F77;
+    transition: .7s;
+}
+
+.socials .card-link i {
+    font-size: 2rem;
+    color: #FD5F77;
+}
+
+.socials .card-link i:nth-child(1) {
+    margin-left: 3rem;
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media (max-width:520px) {
+    .registar {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width:1200px) {
+    .socials .card-link i:nth-child(1) {
+        margin-left: 0;
+    }
+}
+
+.icon {
+    font-size: 30px;
+    color: #FD5F77;
+}
+
+.detail,
+.cardLink {
+    border-radius: 2rem;
+    border-color: #FD5F77;
+    color: #FD5F77;
+}
+
+.detail,
+.cardLink:hover {
+    background-color: #FD5F77;
+    border-color: #FD5F77;
+    color: white;
+}
+
+.cader {
+    border: none;
+}
+
+.success_card {
+    height: 100%;
+}
+
+@media (max-width:768px) {
+    .caders {
+        margin-top: 10px;
+    }
+}
+
+
+.gradient-section {
+    background: linear-gradient(to right, rgba(253, 95, 119, 0) 3%, rgba(253, 95, 119, 1), rgba(253, 95, 119, 1), rgba(253, 95, 119, 1), rgba(253, 95, 119, 1), rgba(253, 95, 119, 0) 98%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.advert {
+    background-color: #FD5F77;
+    text-align: center;
+    line-height: 15rem;
+    height: 15rem;
+}
+
+.learnReg {
+    color: #FD5F77;
+    font-size: xx-large;
+}
+
+.BookModal {
+    background-color: #FFF9FA;
+}
+
+.BookModalCard {
+    background-color: #FFF9FA;
+}
+
+.BookModalBtn {
+    background: none;
+    border-radius: 2rem;
+    border-color: #FD5F77;
+    color: #FD5F77
+}
+
+.BookModalBtn:hover {
+    color: white;
+}
+
+.BookModalBtnDnld:hover {
+    background-color: #FD5F77;
+    border-color: #FD5F77;
+}
+
+#ContactPage,
+#BlogPage,
+#ServicePage,
+#AboutPage {
+    display: none;
+}
+
+/*********************************************** FOOTER CSS STARTS HERE **************************************************/
+footer.bd-footer {
+    background-color: #FD5F77;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+/************************************************ FOOTER CSS ENS HERE ******************************************/
