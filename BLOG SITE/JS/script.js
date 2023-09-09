@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function () {
+    // Get all elements with the class 'nav-link'
+    var navLinks = document.getElementsByClassName('nav-link');
+
+    // Add a click event listener to each nav link
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function () {
+            // Remove the 'active' class from all links
+            for (var j = 0; j < navLinks.length; j++) {
+                navLinks[j].classList.remove('active');
+            }
+
+            // Add the 'active' class to the clicked link
+            this.classList.add('active');
+        });
+    }
+});
+
 document.getElementById("btn1").addEventListener("click", function () {
     document.getElementById("btn1").style.color = "white"
     document.getElementById("btn1").style.backgroundColor = "#FD5F77"
@@ -18,8 +36,8 @@ document.getElementById("btn2").addEventListener("click", function () {
 })
 
 // change the color of the nav link in respect to the page
-document.getElementById("nav1").addEventListener("click", function(){ 
-    document.getElementById("nav1").style.color = "#FD5F77"
+document.getElementById("nav1").addEventListener("click", function () {
+    document.getElementById("nav1").style.color = "#000000"
     document.getElementById("nav2").style.background = "none"
     document.getElementById("nav2").style.color = "#909090"
     document.getElementById("nav3").style.background = "none"
@@ -30,8 +48,8 @@ document.getElementById("nav1").addEventListener("click", function(){
     document.getElementById("nav5").style.color = "#909090"
 })
 
-document.getElementById("nav2").addEventListener("click", function(){
-    document.getElementById("nav2").style.color = "#FD5F77"
+document.getElementById("nav2").addEventListener("click", function () {
+    document.getElementById("nav2").style.color = "#000000"
     document.getElementById("nav1").style.background = "none"
     document.getElementById("nav1").style.color = "#909090"
     document.getElementById("nav3").style.background = "none"
@@ -47,8 +65,8 @@ document.getElementById("nav2").addEventListener("click", function(){
     document.getElementById("ContactPage").style.display = "none"
 })
 
-document.getElementById("nav3").addEventListener("click", function(){
-    document.getElementById("nav3").style.color = "#FD5F77"
+document.getElementById("nav3").addEventListener("click", function () {
+    document.getElementById("nav3").style.color = "#000000"
     document.getElementById("nav2").style.background = "none"
     document.getElementById("nav2").style.color = "#909090"
     document.getElementById("nav1").style.background = "none"
@@ -64,8 +82,8 @@ document.getElementById("nav3").addEventListener("click", function(){
     document.getElementById("ContactPage").style.display = "none"
 })
 
-document.getElementById("nav4").addEventListener("click", function(){
-    document.getElementById("nav4").style.color = "#FD5F77"
+document.getElementById("nav4").addEventListener("click", function () {
+    document.getElementById("nav4").style.color = "#000000"
     document.getElementById("nav2").style.background = "none"
     document.getElementById("nav2").style.color = "#909090"
     document.getElementById("nav3").style.background = "none"
@@ -81,8 +99,8 @@ document.getElementById("nav4").addEventListener("click", function(){
     document.getElementById("ContactPage").style.display = "none"
 })
 
-document.getElementById("nav5").addEventListener("click", function(){
-    document.getElementById("nav5").style.color = "#FD5F77"
+document.getElementById("nav5").addEventListener("click", function () {
+    document.getElementById("nav5").style.color = "#000000"
     document.getElementById("nav2").style.background = "none"
     document.getElementById("nav2").style.color = "#909090"
     document.getElementById("nav3").style.background = "none"

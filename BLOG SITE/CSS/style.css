@@ -70,7 +70,7 @@
 
 @media (max-width: 992px) {
     .collapse {
-       background-color: rgba(255, 255, 255, 0.7);
+       background-color: rgba(255, 255, 255, 0.8);
        transition: ease-in-out 1s;
        border-radius: 1rem;
     }
@@ -87,7 +87,6 @@
     display: inline-block;
     position: relative;
  }
-
  .nav-link::after {
     content: '';
     position: absolute;
@@ -100,18 +99,19 @@
     transform-origin: bottom center;
     transition: transform 0.25s ease-out;
  }
-
  .nav-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom center;
  }
+ .nav-link.active::after {
+    transform: scaleX(1);
+}
  /* underline hover effect ends here */
 
  /****************************************** HEADER CSS ENDS HERE ********************************************/
 
 body {
     margin-top: 100px;
-    /* Adjust this value as needed */
 }
 
 .btn-toolbar {
