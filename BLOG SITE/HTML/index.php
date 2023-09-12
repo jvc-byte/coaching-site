@@ -15,185 +15,234 @@
 </head>
 
 <body>
-    <?php include 'header.php' ?>
-    <div id="HomePage">
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <div id="valCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000"
-                            data-bs-wrap="true">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="0" class="active"
-                                    aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                                <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="4"
-                                    aria-label="Slide 5"></button>
-                                <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="5"
-                                    aria-label="Slide 6"></button>
+    <header>
+        <?php include_once '../include/header.php' ?>
+    </header>
+    <!-- Modal for sign up and sign in starts -->
+    <!-- sign up modal starts -->
+    <div class="modal fade" id="signUpModal" aria-hidden="true" aria-labelledby="signUpModalLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <!-- sign up modal content starts -->
+            <div class="modal-content">
+                <!-- modal header starts -->
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signUpModalLabel">Sign up</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- modal header ends -->
+                <!-- modal body starts -->
+                <div class="modal-body">
+                    <!-- sign up form starts -->
+                    <form class="container" action="#" method="post">
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <label for="firstname" class="visually-hidden">First Name</label>
+                                <input type="text" class="form-control" id="firstname" placeholder="First Name"
+                                    required>
                             </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="../IMAGE/slider-img1.png" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>First slide label</h5>
-                                        <p>Some representative placeholder content for the first slide.</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../IMAGE/slider-img2.png" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Second slide label</h5>
-                                        <p>Some representative placeholder content for the second slide.</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../IMAGE/slider-img3.png" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Third slide label</h5>
-                                        <p>Some representative placeholder content for the third slide.</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../IMAGE/slider-img4.png" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Fourth slide label</h5>
-                                        <p>Some representative placeholder content for the third slide.</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../IMAGE/slider-img6.png" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Fifth slide label</h5>
-                                        <p>Some representative placeholder content for the third slide.</p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="../IMAGE/book-image.png" class="d-block w-100" alt="...">
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Sixth slide label</h5>
-                                        <p>Some representative placeholder content for the third slide.</p>
-                                    </div>
-                                </div>
+                            <div class="col-6">
+                                <label for="lastname" class="visually-hidden">Last Name</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
                             </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#valCarousel"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#valCarousel"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+                            <div class="col-6">
+                                <label for="email" class="visually-hidden">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="email@example.com"
+                                    required>
+                            </div>
+                            <div class="col-6">
+                                <label for="password" class="visually-hidden">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password"
+                                    required>
+                            </div>
+                            <div class="col-6">
+                                <label for="confirmpassword" class="visually-hidden">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmpassword"
+                                    placeholder="Confirm Password" required>
+                            </div>
+                            <div class="col-6">
+                                <label for="number" class="visually-hidden">Phone Number</label>
+                                <input type="number" class="form-control" id="number" placeholder="Phone Number"
+                                    required>
+                            </div>
+                            <select class="form-select col-6" id="industry" name="industry"
+                                aria-label="Select industry">
+                                <option selected>Select industry</option>
+                                <option value="tech">Technology</option>
+                                <option value="healthcare">Healthcare</option>
+                                <option value="agric">Agriculture</option>
+                            </select>
+                            <!--Textarea-->
+                            <div class="col-6">
+                                <textarea id="TextArea" class="md-textarea form-control"
+                                    placeholder="Describe your current challenges" required></textarea>
+                                <label for="TextArea" class="visually-hidden">Textarea</label>
+                            </div>
+                            <!-- Radio buttons -->
+                            <div class="col-6">
+                                <div>
+                                    <strong class="mx-2">Level:</strong>
+                                    <input type="radio" id="startup" name="business_stage" value="startup" required>
+                                    <label for="startup">Startup</label>
+                                    <input type="radio" id="growth" name="business_stage" value="growth" required>
+                                    <label for="growth">Growth</label>
+                                </div>
+                                <!-- Date input -->
+                                <input type="date" id="coaching_date" name="coaching_date" class="form-control"
+                                    required>
+                            </div>
+                            <!-- terms and condition -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    I accept to <a href="#">terms</a> and <a href="#">condition </a>
+                                </label>
+                            </div>
+                            <!-- sign up button -->
+                            <button class="btn btn-outline-primary">Sign up</button>
+                            <!-- Social sign up icon header -->
+                            <strong>Or sign up with:</strong>
+                            <!-- Social sign up icons starts -->
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+                            <!-- Social sign up icons ends -->
                         </div>
-                    </div>
-                    <div class="col-md-5 mt-4 mt-md-0">
-                        <div class="card carde main-card" style="width: 100%;">
-                            <div class="btn-toolbar justify-content-evenly" role="toolbar"
-                                aria-label="Toolbar with button groups">
-                                <button id="btn1" class="btn btn-outline-success custom-outline" type="submit"
-                                    data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false"
-                                    aria-controls="collapseExample">INSPIRATION</button>
-                                <button id="btn2"
-                                    class="btn btn-outline-success text-end ms-lg-5  custom-outline get-started"
-                                    data-bs-toggle="bringin" data-bs-target="#Example" aria-expanded="false"
-                                    aria-controls="collapseExample" type="submit">ANOUNCEMENT</button>
+                    </form>
+                    <!-- sign up form ends -->
+                </div>
+                <!-- modal body ends -->
+                <!-- modal footer starts -->
+                <div class="modal-footer">
+                    <p>Already have an account?</p>
+                    <button class="btn btn-primary" data-bs-target="#signInModal" data-bs-toggle="modal">Sign
+                        in</button>
+                </div>
+                <!-- modal footer ends -->
+            </div>
+            <!-- sign up modal content ends -->
+        </div>
+    </div>
+    <!-- sign up modal ends -->
+
+    <!-- sign in modal starts -->
+    <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="signUpModalLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <!-- sign in modal contents starts -->
+            <div class="modal-content">
+                <!-- madal header -->
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signUpModalLabel2">Sign in</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- sign in modal body starts -->
+                <div class="modal-body">
+                    <!-- sign in form starts -->
+                    <form class="container" action="#" method="get">
+                        <div class="row g-2">
+                            <div class="col-12">
+                                <label for="email" class="visually-hidden">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="email@example.com"
+                                    required>
+                            </div>
+                            <div class="col-12">
+                                <label for="password" class="visually-hidden">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password"
+                                    required>
                             </div>
 
-                            <div class="collapse px-10" id="collapseExample">
-                                <div class="card carde card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-2"><img src="../IMAGE/owner-picture.png" alt="" width="40"
-                                                    height="40" class="image-fluid"></div>
-                                            <div class="col-10">
-                                                <h6>an incredible easy method that works for You</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card carde card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-2"><img src="../IMAGE/owner-picture.png" alt="" width="40"
-                                                    height="40" class="image-fluid"></div>
-                                            <div class="col-10">
-                                                <h6>an incredible easy method that works for You</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card carde card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-2"><img src="../IMAGE/owner-picture.png" alt="" width="40"
-                                                    height="40" class="image-fluid"></div>
-                                            <div class="col-10">
-                                                <h6>an incredible easy method that works for You</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card carde card-body">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-2"><img src="../IMAGE/owner-picture.png" alt="" width="40"
-                                                    height="40" class="image-fluid"></div>
-                                            <div class="col-10">
-                                                <h6>an incredible easy method that works for You</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="form-check col-6">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
+                                <label class="form-check-label" for="flexCheckDefault">Remember me</label>
                             </div>
+                            <div class="col-6 text-end">
+                                <!-- Simple link -->
+                                <a href="#!">Forgot password?</a>
+                            </div>
+                            <button class="btn btn-outline-primary">Sign in</button>
+                            <!-- Social sing up buttons -->
+                            <b>Or sign in with:</b>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
 
-                            <div class="bringin" id="Example">
-                                <div class="card carde card-body">
-                                    Any anouncement, recent update or blog goes here.
-                                </div>
-                                <div class="card carde card-body">
-                                    Any anouncement, recent update or blog goes here.
-                                </div>
-                                <div class="card carde card-body">
-                                    Any anouncement, recent update or blog goes here.
-                                </div>
-                                <div class="card carde card-body">
-                                    Any anouncement, recent update or blog goes here.
-                                </div>
-                                <div class="card carde card-body">
-                                    Any anouncement, recent update or blog goes here.
-                                </div>
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
                             </div>
-                            <div class="card-body socials">
-                                <a href="#" class="card-link"><i class="fab fa-blogger-b"></i></a>
-                                <a href="#" class="card-link"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="card-link"><i class="fa-brands fa-youtube"></i></a>
-                                <a href="#" class="card-link"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="card-link"><i class="fa-brands fa-linkedin"></i></a>
-                                <a href="#" class="card-link"><i class="fa fa-envelope-O"></i></a>
-                            </div>
-                            <!-- html to display date  -->
-                            <!-- <p id="date"></p> -->
                         </div>
-                    </div>
+                    </form>
+                    <!-- sign in form ends -->
+                </div>
+                <!-- sign in modal body ends -->
+                <!-- sign in modal footer -->
+                <div class="modal-footer">
+                    <P>Don't have an account?</P>
+                    <button class="btn btn-primary" data-bs-target="#signUpModal" data-bs-toggle="modal">Sign
+                        up</button>
                 </div>
             </div>
+            <!-- sign in modal contents ends -->
+        </div>
+    </div>
+    <!-- sign in modal ends -->
+    <!-- Modal for sign up and sign in ends -->
 
-            <div id="about-us" class="container text-center" aria-label="learn more or register now">
+    <!-- home page starts -->
+    <main id="HomePage">
+        <!-- section for carousel, anouncement, inspiration & learn more/register now starts -->
+        <section>
+            <!-- carousel and card(anouncement & inspiration) starts -->
+            <div class="container">
+                <div class="row h-100">
+                    <!-- carousel starts -->
+                    <div class="col-md-7">
+                        <?php include_once "../include/slider.php" ?>
+                    </div>
+                    <!-- carousel ends -->
+                    <!-- inspiration and anouncement card starts -->
+                    <div class="col-md-5 mt-4 mt-md-0">
+                        <?php include_once "../include/sliderCard.php" ?>
+                    </div>
+                    <!-- inspiration and anouncement card ends -->
+                </div>
+            </div>
+            <!-- carousel and card(anouncement & inspiration) ends -->
+            <!-- learn more or register now starts -->
+            <div class="container text-center" aria-label="learn more or register now">
                 <div class="row">
                     <a href="#" class="learnReg col-md-3">Learn More <span class="badge"><i
                                 class="fa fa-play-circle-o icon"></i></span></a>
                     <a href="#" class="learnReg registar col-md-3">Register Now</a>
                 </div>
             </div>
+            <!-- learn more or register now starts -->
         </section>
+        <!-- section for carousel, anouncement, inspiration & learn more/register now ends -->
 
+        <!-- about us starts -->
         <section class="mt-5 text-md-start text-center">
             <div class="container mt-4">
                 <h3>About us</h3>
@@ -203,9 +252,9 @@
                             <div class="col-md-2 the-coach-image">
                                 <img src="../IMAGE/owner-picture2.png" class="img-fluid rounded-start" alt="...">
                             </div>
-                            <div class="col-10 the-coach">
+                            <div class="col-md-10 the-coach">
                                 <div class="card-body">
-                                    <h5 class="card-title">Meet the coach</h5>
+                                    <h5 class="card-title" id="MeetTheCoach">Meet the coach</h5>
                                     <p class="card-text">Coach offers business coaching workshop programs that are
                                         designed
                                         to step up progress and accelerate results in both your business and personal
@@ -215,7 +264,7 @@
                                         our arsenal of proprietary tools, and our deep-dive strategy sessions are the
                                         cornerstones of our programs' success.
                                     </p>
-                                    <a id="services" href="#" class="btn btn-outline-primary detail">More Details</a>
+                                    <a href="#" class="btn btn-outline-primary detail">More Details</a>
                                     </p>
                                 </div>
                             </div>
@@ -224,7 +273,9 @@
                 </div>
             </div>
         </section>
+        <!-- about us ends -->
 
+        <!-- our programs starts -->
         <article>
             <div class="container-sm text-center mb-4">
                 <h3>Our Programs</h3>
@@ -234,80 +285,28 @@
                     and our deep-dive strategy sessions are the cornerstones of our programs' success.
                 </p>
             </div>
-
+            <!-- Our program card starts -->
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4 caders">
-                        <div class="card success_card">
-                            <img src="../IMAGE/div.post-image.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">The Signature Program - Classic</h5>
-                                <p class="card-text">Our in-person workshops allow you to become fully immersed in the
-                                    strategy and planning of your life and business while connecting with your coach and
-                                    the
-                                    other entrepreneurs in the room. No distractions: Only you, your vision, and the
-                                    tools
-                                    and resources to get you to where you want to be.
-                                </p>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="card-link btn btn-outline-success  cardLink">More Details</a>
-                                <a href="#" class="card-link btn btn-outline-success cardLink">Levels, Dates & Fees</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 caders">
-                        <div class="card success_card">
-                            <img src="../IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">The Signature Program - P2P</h5>
-                                <p class="card-text">Our online workshops give you the proven benefits of Strategic
-                                    Coach
-                                    with the flexibility you need. With the ability to attend from anywhere in the
-                                    world,
-                                    this is the perfect option for entrepreneurs who want to save time and avoid travel
-                                    complexities, while still enjoying massive results and breakthroughs.
-                                </p>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="card-link btn btn-outline-success cardLink">More Details</a>
-                                <a href="#" class="card-link btn btn-outline-success cardLink">Levels, Dates & Fees</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 caders">
-                        <div class="card success_card">
-                            <img src="../IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">The Signature Program - Virtual</h5>
-                                <p class="card-text">Our online workshops give you the proven benefits of Strategic
-                                    Coach
-                                    with the flexibility you need. With the ability to attend from anywhere in the
-                                    world,
-                                    this is the perfect option for entrepreneurs who want to save time and avoid travel
-                                    complexities, while still enjoying massive results and breakthroughs.
-                                </p>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="card-link btn btn-outline-success cardLink">More Details</a>
-                                <a href="#" class="card-link btn btn-outline-success cardLink">Levels, Dates & Fees</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include_once "../include/ourProgramCard.php" ?>
                 </div>
             </div>
-            <div class="container-sm text-center mt-4">Our Signature Program, offered both in person and virtually,
-                provides
-                a rare
-                opportunity to
-                plan for the future, determine how best to get there, and strategic about what's most pressing
-                in your business right now. Each option gives you the chance to gain new insights from people
-                in other industries and other parts of the world. You'll come away with prioritized, concrete
-                action steps, new tools and capabilities, and a plan for the next 90 days.</div>
+            <!-- Our program card ends -->
+            <!-- some texts below our programs card starts -->
+            <div class="container-sm text-center mt-4">
+                <p>Our Signature Program, offered both in person and virtually,
+                    provides a rare opportunity to plan for the future, determine how best to get there, and strategic
+                    about
+                    what's most pressing in your business right now. Each option gives you the chance to gain new
+                    insights
+                    from people in other industries and other parts of the world. You'll come away with prioritized,
+                    concrete action steps, new tools and capabilities, and a plan for the next 90 days.
+                </p>
+            </div>
+            <!-- some texts below our programs card starts -->
         </article>
-
+        <!-- our programs ends -->
+        <!-- success story starts -->
         <article>
             <div class=" container-sm text-center mb-3 mt-5">
                 <h3>Success Stories</h3>
@@ -318,107 +317,27 @@
                 </p>
             </div>
 
+            <!-- success story card starts -->
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 caders">
-                        <div class="card success_card">
-                            <img src="../IMAGE/div.post-image.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Is Val Coach Worth It?</h5>
-                                <p class="card-text">Our members reveal how they've made the most of their investments.
-                                </p>
-                                <footer class="blockquote-footer">Valentine <cite title="Source Title">“The numbers have
-                                        gone up every year that I've been in Coach.”</cite>
-                                </footer>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="card-link btn btn-outline-success  cardLink">More Details</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 caders">
-                        <div class="card success_card">
-                            <img src="../IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Should You Join Val Coach?</h5>
-                                <p class="card-text">Our members answer your top questions about Strategic Coach.</p>
-                                <footer class="blockquote-footer">Justin <cite title="Source Title">“It has
-                                        transformed my entire life.”</cite>
-                                </footer>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="card-link btn btn-outline-success cardLink">More Details</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 caders">
-                        <div class="card success_card">
-                            <img src="../IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Gift & Humphrey</h5>
-                                <p class="card-text">Humphrey Property Management </p>
-                                <footer class="blockquote-footer">Maxwell <cite title="Source Title">“Strategic Coach
-                                        creates a community of people who are are like-minded and understand what you're
-                                        going through”</cite>
-                                </footer>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="card-link btn btn-outline-success cardLink">More Details</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 caders">
-                        <div class="card success_card">
-                            <img src="../IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Jai Dhaliwal & Ruby Mahal</h5>
-                                <p class="card-text">JDRM Dental Care Ltd.</p>
-                                <footer class="blockquote-footer">Majid <cite title="Source Title">“Strategic Coach is
-                                        an
-                                        investment that will pay dividends for a long time in my personal life, my
-                                        marriage,
-                                        with my family, and in my business.”</cite>
-                                </footer>
-                            </div>
-                            <div class="card-body">
-                                <a href="#" class="card-link btn btn-outline-success cardLink">More Details</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include_once "../include/successPageCard.php" ?>
                 </div>
             </div>
+            <!-- success story card ends -->
         </article>
+        <!-- success story ends -->
 
+        <!-- book sales advert starts -->
         <article class="gradient-section mt-5">
             <div class="container d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="max-width: 540px; background: none;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="../IMAGE/book image 2.png" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Get started today!</h5>
-                                <p class="card-text">Our starter kit includes everything you need to know about how Val
-                                    Coach will multiply your income, expand your freedom, and simplify every area of
-                                    your
-                                    life.
-                                </p>
-                                <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-primary detail" data-bs-toggle="modal"
-                                    data-bs-target="#staticBackdrop">DOWNLOAD NOW!
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include_once "../include/bookSalesAdvertCard.php" ?>
                 </div>
             </div>
         </article>
+        <!-- book sales advert ends -->
 
-        <!-- Modal -->
+        <!-- Modal for book advert starts -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -436,20 +355,24 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title">Book title</h5>
+                                        <h5 class="card-title" id="ModalBookTitle">Book title</h5>
                                         <p class="card-text">Book description.This content is a little bit longer.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <h6 class="card-title">Book summary or overview</h6>
-                        Omnis, sint earum? Alias optio quae perspiciatis laboriosam voluptatem vel ipsam rerum modi
-                        quaerat
-                        asperiores dolorum dolor nam eveniet minima facere, repellat, cumque quam consequatur reiciendis
-                        doloribus culpa! Fuga, exercitationem.
-                        Dolorum dolorem itaque, enim dicta quidem reprehenderit possimus adipisci quas, modi sapiente
-                        consequatur fugit voluptate vitae ratione ipsa voluptas aliquid, distinctio similique voluptates
-                        corrupti unde? Ducimus, non! Praesentium, facere ea?
+                        <p>Omnis, sint earum? Alias optio quae perspiciatis laboriosam voluptatem vel ipsam rerum modi
+                            quaerat
+                            asperiores dolorum dolor nam eveniet minima facere, repellat, cumque quam consequatur
+                            reiciendis
+                            doloribus culpa! Fuga, exercitationem.
+                            Dolorum dolorem itaque, enim dicta quidem reprehenderit possimus adipisci quas, modi
+                            sapiente
+                            consequatur fugit voluptate vitae ratione ipsa voluptas aliquid, distinctio similique
+                            voluptates
+                            corrupti unde? Ducimus, non! Praesentium, facere ea?
+                        </p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary BookModalBtn"
@@ -460,12 +383,15 @@
                 </div>
             </div>
         </div>
-    </div>
+        <!-- Modal for book advert ends -->
+    </main>
+    <!-- home page ends -->
 
-    <div id="AboutPage">
+    <!-- about us page starts here -->
+    <article id="AboutPage">
         <div class="container">
-            <h1 class="text-center">About Us</h1>
-            <div class="row">
+            <h1 class="text-center Head1Tag">About Us</h1>
+            <div class="row Head1TagBody">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsam suscipit aliquam laudantium
                 alias! Earum eius nemo, quidem magnam esse similique quasi hic error temporibus, veritatis fugit quis
                 quisquam a!
@@ -497,12 +423,14 @@
                 tempora at hic!
             </div>
         </div>
-    </div>
+    </article>
+    <!-- about us page ends here -->
 
-    <div id="ServicePage">
+    <!-- services page starts here -->
+    <article id="ServicePage">
         <div class="container">
-            <div class="row">
-                <h1 class="text-center">services</h1>
+            <h1 class="text-center Head1Tag">services</h1>
+            <div class="row Head1TagBody">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eum vero consequuntur reiciendis,
                 alias, culpa
                 placeat qui mollitia sunt dignissimos autem dolore et quisquam repellat reprehenderit modi saepe iure!
@@ -551,188 +479,25 @@
                 impedit rerum?
             </div>
         </div>
-    </div>
+    </article>
+    <!-- service page ends here -->
 
-    <div id="BlogPage">
-        <blog>
-            <div class="container">
-                <h1 class="text-center">Blog Page </h1>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="../IMAGE/slider-img2.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> The Benefits of Meditation for Mental Health</h5>
-                                <p class="card-text">Explore the positive impact of meditation on mental well-being and
-                                    provide tips for incorporating it into daily life.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">The Future of Artificial Intelligence in Healthcare</h5>
-                                <p class="card-text">Discuss how AI is revolutionizing the healthcare industry, from
-                                    diagnostics to patient care.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Sustainable Living: Tips for Reducing Your Carbon Footprint</h5>
-                                <p class="card-text">Offer practical advice on eco-friendly habits and sustainable
-                                    choices
-                                    for a greener lifestyle.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">The Importance of Cybersecurity in the Digital Age</h5>
-                                <p class="card-text">TDelve into the rising significance of cybersecurity, especially
-                                    with
-                                    the increase in online threats and data breaches.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> Exploring the World of Virtual Reality Gaming</h5>
-                                <p class="card-text">Provide insights into the immersive world of VR gaming and
-                                    recommend
-                                    popular VR games.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> A Beginner's Guide to Investing in Stocks</h5>
-                                <p class="card-text">Introduce beginners to the world of stock market investing,
-                                    covering
-                                    key concepts and strategies.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> The Art of Productive Remote Work</h5>
-                                <p class="card-text">Share strategies and tools for staying productive while working
-                                    remotely, a topic of growing relevance.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> Traveling on a Budget: How to Explore the World Affordably</h5>
-                                <p class="card-text">Offer budget-friendly travel tips and resources for
-                                    adventure-seekers.
-                                </p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">The Impact of Social Media on Mental Health</h5>
-                                <p class="card-text">Examine the relationship between social media use and mental
-                                    health,
-                                    along with tips for maintaining a healthy balance.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> The Rise of Plant-Based Diets: Health Benefits and Myths</h5>
-                                <p class="card-text"> Explore the health benefits of plant-based diets, debunk common
-                                    myths,
-                                    and provide recipe ideas.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> A Beginner's Guide to Investing in Stocks</h5>
-                                <p class="card-text">Introduce beginners to the world of stock market investing,
-                                    covering
-                                    key concepts and strategies.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-sm-4 col-lg-3 col-xl-2">
-                        <div class="card h-100">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title"> A Beginner's Guide to Investing in Stocks</h5>
-                                <p class="card-text">Introduce beginners to the world of stock market investing,
-                                    covering
-                                    key concepts and strategies.</p>
-                            </div>
-                            <div class="card-footer">
-                                <small class="text-body-secondary">Last updated 3 mins ago</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </blog>
-    </div>
-
-    <div id="ContactPage">
+    <!-- blog page starts here -->
+    <article id="BlogPage">
         <div class="container">
-            <h1 class="text-center">Contact Us</h1>
-            <div class="row">
+            <h1 class="text-center Head1Tag">Blog Page </h1>
+            <div class="row row-cols-1 row-cols-md-3 g-4 Head1TagBody">
+                <?php include_once "../include/blogPageCard.php" ?>
+            </div>
+        </div>
+    </article>
+    <!-- blog page ends here -->
+
+    <!-- contact us page starts here -->
+    <article id="ContactPage">
+        <div class="container">
+            <h1 class="text-center Head1Tag">Contact Us</h1>
+            <div class="row Head1TagBody">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae expedita natus corporis iure accusamus
                 magnam veniam non aspernatur, explicabo voluptates voluptatibus facilis possimus tempora distinctio? A
                 architecto corporis at vel.
@@ -765,13 +530,24 @@
                 quae asperiores reiciendis impedit! Voluptatibus, eum.
             </div>
         </div>
-    </div>
+    </article>
+    <!-- contact us page ends here -->
 
+    <!-- advert placement starts here -->
     <article class="advert mt-5">
         <a href="#" class="btn btn-outline-primary detail">advert placement </a>
     </article>
+    <!-- advert placement ends here -->
+    <!-- javascript scroll to top starts here -->
+    <button id="scroll-to-top" class="btn btn-primary btn-lg back-to-top" style="display: none;">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- javascript scroll to top ends here -->
 
-    <?php include 'footer.php' ?>
+
+    <footer>
+        <?php include_once '../include/footer.php' ?>
+    </footer>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

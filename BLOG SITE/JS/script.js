@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Get all elements with the class 'nav-link'
-    var navLinks = document.getElementsByClassName('nav-link');
+    // Get all elements with the class 'nav_link'
+    var navLinks = document.getElementsByClassName('nav_link');
 
     // Add a click event listener to each nav link
     for (var i = 0; i < navLinks.length; i++) {
@@ -18,18 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.getElementById("btn1").addEventListener("click", function () {
     document.getElementById("btn1").style.color = "white"
-    document.getElementById("btn1").style.backgroundColor = "#FD5F77"
-    document.getElementById("btn2").style.color = "#FD5F77"
+    document.getElementById("btn1").style.backgroundColor = "blue"
+    document.getElementById("btn2").style.color = "blue"
     document.getElementById("btn2").style.backgroundColor = "white"
     document.getElementById("Example").style.display = "none"
     document.getElementById("collapseExample").style.display = "block"
 })
 
 document.getElementById("btn2").addEventListener("click", function () {
-    document.getElementById("btn2").style.backgroundColor = "#FD5F77"
+    document.getElementById("btn2").style.backgroundColor = "blue"
     document.getElementById("btn1").style.backgroundColor = "white"
     document.getElementById("btn2").style.color = "white"
-    document.getElementById("btn1").style.color = "#FD5F77"
+    document.getElementById("btn1").style.color = "blue"
     document.getElementById("collapseExample").style.display = "none"
     document.getElementById("Example").style.display = "block"
 
@@ -115,3 +115,20 @@ document.getElementById("nav5").addEventListener("click", function () {
     document.getElementById("BlogPage").style.display = "none"
     document.getElementById("ContactPage").style.display = "block"
 })
+
+$(document).ready(function () {
+    // Show or hide the button based on scroll position
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            $('#scroll-to-top').fadeIn();
+        } else {
+            $('#scroll-to-top').fadeOut();
+        }
+    });
+
+    // Scroll to top when the button is clicked
+    $('#scroll-to-top').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 800); // Adjust the speed (800ms) if needed
+        return false;
+    });
+});
