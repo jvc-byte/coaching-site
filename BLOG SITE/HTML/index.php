@@ -20,7 +20,8 @@
     </header>
     <!-- Modal for sign up and sign in starts -->
     <!-- sign up modal starts -->
-    <div class="modal fade" id="signUpModal" aria-hidden="true" aria-labelledby="signUpModalLabel" tabindex="-1">
+    <div class="modal fade mt-4" id="signUpModal" aria-hidden="true" aria-labelledby="signUpModalLabel"
+        data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <!-- sign up modal content starts -->
             <div class="modal-content">
@@ -52,12 +53,13 @@
                             <div class="col-6">
                                 <label for="password" class="visually-hidden">Password</label>
                                 <input type="password" class="form-control" id="password" placeholder="Password"
-                                    required>
+                                    required><i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye"></i>
                             </div>
                             <div class="col-6">
-                                <label for="confirmpassword" class="visually-hidden">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmpassword"
+                                <label for="confirmPassword" class="visually-hidden">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirmPassword"
                                     placeholder="Confirm Password" required>
+                                <i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye2"></i>
                             </div>
                             <div class="col-6">
                                 <label for="number" class="visually-hidden">Phone Number</label>
@@ -94,7 +96,7 @@
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                                 <label class="form-check-label" for="flexCheckDefault">
-                                    I accept to <a href="#">terms</a> and <a href="#">condition </a>
+                                    I agree to <a href="#">terms</a> and <a href="#">condition </a>
                                 </label>
                             </div>
                             <!-- sign up button -->
@@ -139,7 +141,8 @@
     <!-- sign up modal ends -->
 
     <!-- sign in modal starts -->
-    <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="signUpModalLabel2" tabindex="-1">
+    <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="signUpModalLabel2" tabindex="-1"
+        data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
             <!-- sign in modal contents starts -->
             <div class="modal-content">
@@ -159,9 +162,9 @@
                                     required>
                             </div>
                             <div class="col-12">
-                                <label for="password" class="visually-hidden">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password"
-                                    required>
+                                <label for="login_password" class="visually-hidden">Password</label>
+                                <input type="password" class="form-control" id="login_password" placeholder="Password"
+                                    required><i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye3"></i>
                             </div>
 
                             <div class="form-check col-6">

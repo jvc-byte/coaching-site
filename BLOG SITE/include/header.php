@@ -25,7 +25,7 @@
                         <a id="nav5" class="nav_link" href="#">Contact</a>
                     </li>
                 </ul>
-                <button class="btn btn-outline-primary customize" type="submit">Book a call</button>
+                <a href="https://wa.me/message/RLBA3TZ3FOD5F1"><button class="btn btn-outline-primary customize" type="submit">Send direct message</button></a>
                 <button class="btn btn-outline-primary ms-md-5  customize get-started" type="submit"
                 data-bs-target="#signUpModal" data-bs-toggle="modal">Get
                     started</button>

@@ -20,11 +20,11 @@
             <div class="col-6 col-lg-2 offset-lg-1 mb-3">
                 <h5>Links</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#">Home</a></li>
+                    <li class="mb-2"><a href="index.php">Home</a></li>
                     <li class="mb-2"><a href="#">Our Team</a></li>
-                    <li class="mb-2"><a href="#">Client Login</a></li>
+                    <li class="mb-2" data-bs-target="#signInModal" data-bs-toggle="modal"><a href="#">Client Login</a></li>
                     <li class="mb-2"><a href="#">Store</a></li>
-                    <li class="mb-2"><a href="#">Blog</a></li>
+                    <li class="mb-2" id="ourBlog" ><a href="#">Blog</a></li>
                     <li class="mb-2"><a href="#">Media Room</a></li>
                     <li class="mb-2"><a href="#">Testimonials</a></li>
                 </ul>
@@ -51,8 +51,8 @@
             <div class="col-6 col-lg-2 mb-3">
                 <h5>Community</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-2"><a href="#">About us</a></li>
-                    <li class="mb-2"><a href="#">Contact us</a></li>
+                    <li class="mb-2" id="aboutUs"><a href="#">About us</a></li>
+                    <li class="mb-2" id="contactUs" ><a href="#">Contact us</a></li>
                     <li class="mb-2"><a href="#">Issues</a></li>
                     <li class="mb-2"><a href="#">Discussions</a></li>
                     <li class="mb-2"><a href="#">Corporate sponsors</a></li>
