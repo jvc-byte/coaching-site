@@ -45,20 +45,20 @@ document.getElementById("passwordeye3").addEventListener("click", function(){
 
 document.getElementById("btn1").addEventListener("click", function () {
     document.getElementById("btn1").style.color = "white"
-    document.getElementById("btn1").style.backgroundColor = "blue"
-    document.getElementById("btn2").style.color = "blue"
+    document.getElementById("btn1").style.backgroundColor = "#0202a9"
+    document.getElementById("btn2").style.color = "#0202a9"
     document.getElementById("btn2").style.backgroundColor = "white"
-    document.getElementById("Example").style.display = "none"
-    document.getElementById("collapseExample").style.display = "block"
+    document.getElementById("anouncement").style.display = "none"
+    document.getElementById("inspiration").style.display = "block"
 })
 
 document.getElementById("btn2").addEventListener("click", function () {
-    document.getElementById("btn2").style.backgroundColor = "blue"
-    document.getElementById("btn1").style.backgroundColor = "white"
     document.getElementById("btn2").style.color = "white"
-    document.getElementById("btn1").style.color = "blue"
-    document.getElementById("collapseExample").style.display = "none"
-    document.getElementById("Example").style.display = "block"
+    document.getElementById("btn2").style.backgroundColor = "#0202a9"
+    document.getElementById("btn1").style.color = "#0202a9"
+    document.getElementById("btn1").style.backgroundColor = "white"
+    document.getElementById("inspiration").style.display = "none"
+    document.getElementById("anouncement").style.display = "block"
 
 })
 
@@ -167,6 +167,23 @@ document.getElementById("contactUs").addEventListener("click", function () {
     document.getElementById("ServicePage").style.display = "none"
     document.getElementById("BlogPage").style.display = "none"
     document.getElementById("ContactPage").style.display = "block"
+})
+
+document.getElementById("aboutusmoredetailbtn").addEventListener("click", function () {
+    document.getElementById("nav5").style.color = "#000000"
+    document.getElementById("nav2").style.background = "none"
+    document.getElementById("nav2").style.color = "#909090"
+    document.getElementById("nav3").style.background = "none"
+    document.getElementById("nav3").style.color = "#909090"
+    document.getElementById("nav4").style.background = "none"
+    document.getElementById("nav4").style.color = "#909090"
+    document.getElementById("nav1").style.background = "none"
+    document.getElementById("nav1").style.color = "#909090"
+    document.getElementById("HomePage").style.display = "none"
+    document.getElementById("AboutPage").style.display = "block"
+    document.getElementById("ServicePage").style.display = "none"
+    document.getElementById("BlogPage").style.display = "none"
+    document.getElementById("ContactPage").style.display = "none"
 })
 
 document.getElementById("ourBlog").addEventListener("click", function () {

@@ -1,13 +1,13 @@
 <div class="card carde main-card" style="width: 100%;">
     <div class="btn-toolbar justify-content-evenly" role="toolbar" aria-label="Toolbar with button groups">
-        <button id="btn1" class="btn btn-outline-primary custom-outline" type="submit" data-bs-toggle="collapse"
-            data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">INSPIRATION</button>
-        <button id="btn2" class="btn btn-outline-primary text-end ms-lg-5  custom-outline get-started"
-            data-bs-toggle="bringin" data-bs-target="#Example" aria-expanded="false" aria-controls="collapseExample"
+        <button id="btn1" class="btn btn-outline-primary inspirebtn" type="submit" data-bs-toggle="inspiration"
+            data-bs-target="#inspiration" aria-expanded="false" aria-controls="inspiration">INSPIRATION</button>
+        <button id="btn2" class="btn btn-outline-primary text-end ms-lg-5 anouncebtn"
+            data-bs-toggle="anounce" data-bs-target="#anouncement" aria-expanded="false" aria-controls="anouncement"
             type="submit">ANOUNCEMENT</button>
     </div>
 
-    <div class="collapse" id="collapseExample">
+    <div class="inspire" id="inspiration">
         <div class="card carde card-body">
             <div class="container">
                 <div class="row">
@@ -54,7 +54,7 @@
         </div>
     </div>
 
-    <div class="bringin" id="Example">
+    <div class="anounce" id="anouncement">
         <div class="card carde card-body">
             Any anouncement, recent update or blog goes here.
         </div>

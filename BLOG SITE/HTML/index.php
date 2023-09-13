@@ -73,6 +73,13 @@
                                 <option value="healthcare">Healthcare</option>
                                 <option value="agric">Agriculture</option>
                             </select>
+                            <select class="form-select col-6" id="industry" name="industry"
+                                aria-label="Select industry">
+                                <option selected>Select program</option>
+                                <option value="tech">classic</option>
+                                <option value="healthcare">p2p</option>
+                                <option value="agric">virtual</option>
+                            </select>
                             <!--Textarea-->
                             <div class="col-6">
                                 <textarea id="TextArea" class="md-textarea form-control"
@@ -101,6 +108,10 @@
                             </div>
                             <!-- sign up button -->
                             <button class="btn btn-outline-primary">Sign up</button>
+                        </div>
+                    </form>
+                    <div class="container mt-3">
+                        <div class="row">
                             <!-- Social sign up icon header -->
                             <strong>Or sign up with:</strong>
                             <!-- Social sign up icons starts -->
@@ -123,7 +134,7 @@
                             </div>
                             <!-- Social sign up icons ends -->
                         </div>
-                    </form>
+                    </div>
                     <!-- sign up form ends -->
                 </div>
                 <!-- modal body ends -->
@@ -167,16 +178,20 @@
                                     required><i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye3"></i>
                             </div>
 
-                            <div class="form-check col-6">
+                            <div class="form-check rememberMe col-6">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                                 <label class="form-check-label" for="flexCheckDefault">Remember me</label>
                             </div>
-                            <div class="col-6 text-end">
+                            <div class="col-6 forgotPass text-end">
                                 <!-- Simple link -->
                                 <a href="#!">Forgot password?</a>
                             </div>
                             <button class="btn btn-outline-primary">Sign in</button>
-                            <!-- Social sing up buttons -->
+                        </div>
+                    </form>
+                    <div class="container mt-4">
+                        <div class="row">
+                            <!-- Social sign up buttons -->
                             <b>Or sign in with:</b>
                             <div class="text-center">
                                 <button type="button" class="btn btn-primary btn-floating mx-1">
@@ -196,7 +211,7 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                     <!-- sign in form ends -->
                 </div>
                 <!-- sign in modal body ends -->
@@ -267,7 +282,7 @@
                                         our arsenal of proprietary tools, and our deep-dive strategy sessions are the
                                         cornerstones of our programs' success.
                                     </p>
-                                    <a href="#" class="btn btn-outline-primary detail">More Details</a>
+                                    <a href="#" id="aboutusmoredetailbtn" class="btn btn-outline-primary detail">More Details</a>
                                     </p>
                                 </div>
                             </div>
