@@ -18,6 +18,7 @@
     <header>
         <?php include_once '../include/header.php' ?>
     </header>
+
     <!-- Modal for sign up and sign in starts -->
     <!-- sign up modal starts -->
     <div class="modal fade mt-4" id="signUpModal" aria-hidden="true" aria-labelledby="signUpModalLabel"
@@ -282,7 +283,8 @@
                                         our arsenal of proprietary tools, and our deep-dive strategy sessions are the
                                         cornerstones of our programs' success.
                                     </p>
-                                    <a href="#" id="aboutusmoredetailbtn" class="btn btn-outline-primary detail">More Details</a>
+                                    <a href="#" id="aboutusmoredetailbtn" class="btn btn-outline-primary detail">More
+                                        Details</a>
                                     </p>
                                 </div>
                             </div>
@@ -313,12 +315,10 @@
             <!-- some texts below our programs card starts -->
             <div class="container-sm text-center mt-4">
                 <p>Our Signature Program, offered both in person and virtually,
-                    provides a rare opportunity to plan for the future, determine how best to get there, and strategic
-                    about
-                    what's most pressing in your business right now. Each option gives you the chance to gain new
-                    insights
-                    from people in other industries and other parts of the world. You'll come away with prioritized,
-                    concrete action steps, new tools and capabilities, and a plan for the next 90 days.
+                    provides a rare opportunity to plan for the future, determine how best to get there, and what's most
+                    pressing in your business right now. Each option gives you the chance to gain new insights from
+                    people in other industries and other parts of the world. You'll come away with prioritized, concrete
+                    action steps, new tools and capabilities, and a plan for the next 90 days.
                 </p>
             </div>
             <!-- some texts below our programs card starts -->
@@ -328,9 +328,8 @@
         <article>
             <div class=" container-sm text-center mb-3 mt-5">
                 <h3>Success Stories</h3>
-                <p class="card-text">Ask our entrepreneurs about their experience at Strategic Coach, and every story
-                    would
-                    be different — but with a common thread running through them: Results. Unexpected results.
+                <p class="card-text">Ask our entrepreneurs about their experience in our Coaching, and every story
+                    would be different — but with a common thread running through them: Results. Unexpected results.
                     More-than-expected results. Off-shoot results. Very often, life-changing results.
                 </p>
             </div>
