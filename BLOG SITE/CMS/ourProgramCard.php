@@ -1,6 +1,6 @@
 <div class="col-md-4 caders">
     <div class="card success_card">
-        <img src="../IMAGE/div.post-image.png" class="card-img-top" alt="...">
+        <img src="IMAGE/div.post-image.png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">The Epicurean Program - Classic</h5>
             <p class="card-text">Our in-person workshops allow you to become fully immersed in the
@@ -18,7 +18,7 @@
 
 <div class="col-md-4 caders">
     <div class="card success_card">
-        <img src="../IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
+        <img src="IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">The Odyssey Program - P2P</h5>
             <p class="card-text">Our online workshops give you the proven benefits of val Coaching with the flexibility
@@ -36,7 +36,7 @@
 
 <div class="col-md-4 caders">
     <div class="card success_card">
-        <img src="../IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
+        <img src="IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">The Astral Program - Virtual</h5>
             <p class="card-text">Our online workshops give you the proven benefits of what you need with the flexibility

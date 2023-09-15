@@ -187,9 +187,19 @@ a {
     z-index: 8900;
 }
 
+.coachprogramsbody {
+    margin-top: 100px;
+}
+
+@media (max-width:768px) {
+    #testthisidiot {
+        margin-top: 100px;
+    }
+}
+
 .homefromourprogpage {
     position: fixed;
-    top: 0.8%;
+    top: 2%;
     left: 2%;
     color: white;
     z-index: 9990;

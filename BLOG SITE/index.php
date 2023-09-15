@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../IMAGE/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGE/logo.jpg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/13d098a0cf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
-    <link rel="stylesheet" href="../bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
         crossorigin="anonymous" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC%+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9">
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="CSS/style.css">
     <title>val web | home</title>
 </head>
 
 <body>
     <header>
-        <?php include_once '../include/header.php' ?>
+        <?php include_once 'CMS/header.php' ?>
     </header>
 
     <!-- Modal for sign up and sign in starts -->
@@ -24,130 +24,7 @@
     <div class="modal fade mt-4" id="signUpModal" aria-hidden="true" aria-labelledby="signUpModalLabel"
         data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <!-- sign up modal content starts -->
-            <div class="modal-content">
-                <!-- modal header starts -->
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="signUpModalLabel">Sign up</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <!-- modal header ends -->
-                <!-- modal body starts -->
-                <div class="modal-body">
-                    <!-- sign up form starts -->
-                    <form class="container" action="#" method="post">
-                        <div class="row g-2">
-                            <div class="col-6">
-                                <label for="firstname" class="visually-hidden">First Name</label>
-                                <input type="text" class="form-control" id="firstname" placeholder="First Name"
-                                    required>
-                            </div>
-                            <div class="col-6">
-                                <label for="lastname" class="visually-hidden">Last Name</label>
-                                <input type="text" class="form-control" id="lastname" placeholder="Last Name" required>
-                            </div>
-                            <div class="col-6">
-                                <label for="email" class="visually-hidden">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="email@example.com"
-                                    required>
-                            </div>
-                            <div class="col-6">
-                                <label for="password" class="visually-hidden">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password"
-                                    required><i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye"></i>
-                            </div>
-                            <div class="col-6">
-                                <label for="confirmPassword" class="visually-hidden">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmPassword"
-                                    placeholder="Confirm Password" required>
-                                <i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye2"></i>
-                            </div>
-                            <div class="col-6">
-                                <label for="number" class="visually-hidden">Phone Number</label>
-                                <input type="number" class="form-control" id="number" placeholder="Phone Number"
-                                    required>
-                            </div>
-                            <select class="form-select col-6" id="industry" name="industry"
-                                aria-label="Select industry">
-                                <option selected>Select industry</option>
-                                <option value="tech">Technology</option>
-                                <option value="healthcare">Healthcare</option>
-                                <option value="agric">Agriculture</option>
-                            </select>
-                            <select class="form-select col-6" id="industry" name="industry"
-                                aria-label="Select industry">
-                                <option selected>Select program</option>
-                                <option value="tech">classic</option>
-                                <option value="healthcare">p2p</option>
-                                <option value="agric">virtual</option>
-                            </select>
-                            <!--Textarea-->
-                            <div class="col-6">
-                                <textarea id="TextArea" class="md-textarea form-control"
-                                    placeholder="Describe your current challenges" required></textarea>
-                                <label for="TextArea" class="visually-hidden">Textarea</label>
-                            </div>
-                            <!-- Radio buttons -->
-                            <div class="col-6">
-                                <div>
-                                    <strong class="mx-2">Level:</strong>
-                                    <input type="radio" id="startup" name="business_stage" value="startup" required>
-                                    <label for="startup">Startup</label>
-                                    <input type="radio" id="growth" name="business_stage" value="growth" required>
-                                    <label for="growth">Growth</label>
-                                </div>
-                                <!-- Date input -->
-                                <input type="date" id="coaching_date" name="coaching_date" class="form-control"
-                                    required>
-                            </div>
-                            <!-- terms and condition -->
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    I agree to <a href="#">terms</a> and <a href="#">condition </a>
-                                </label>
-                            </div>
-                            <!-- sign up button -->
-                            <button class="btn btn-outline-primary">Sign up</button>
-                        </div>
-                    </form>
-                    <div class="container mt-3">
-                        <div class="row">
-                            <!-- Social sign up icon header -->
-                            <strong>Or sign up with:</strong>
-                            <!-- Social sign up icons starts -->
-                            <div class="text-center">
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-facebook-f"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-google"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
-                            <!-- Social sign up icons ends -->
-                        </div>
-                    </div>
-                    <!-- sign up form ends -->
-                </div>
-                <!-- modal body ends -->
-                <!-- modal footer starts -->
-                <div class="modal-footer">
-                    <p>Already have an account?</p>
-                    <button class="btn btn-primary" data-bs-target="#signInModal" data-bs-toggle="modal">Sign
-                        in</button>
-                </div>
-                <!-- modal footer ends -->
-            </div>
-            <!-- sign up modal content ends -->
+            <?php include_once "CMS/signUpModal.php" ?>
         </div>
     </div>
     <!-- sign up modal ends -->
@@ -156,74 +33,7 @@
     <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="signUpModalLabel2" tabindex="-1"
         data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
-            <!-- sign in modal contents starts -->
-            <div class="modal-content">
-                <!-- madal header -->
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="signUpModalLabel2">Sign in</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <!-- sign in modal body starts -->
-                <div class="modal-body">
-                    <!-- sign in form starts -->
-                    <form class="container" action="#" method="get">
-                        <div class="row g-2">
-                            <div class="col-12">
-                                <label for="email" class="visually-hidden">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="email@example.com"
-                                    required>
-                            </div>
-                            <div class="col-12">
-                                <label for="login_password" class="visually-hidden">Password</label>
-                                <input type="password" class="form-control" id="login_password" placeholder="Password"
-                                    required><i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye3"></i>
-                            </div>
-
-                            <div class="form-check rememberMe col-6">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
-                                <label class="form-check-label" for="flexCheckDefault">Remember me</label>
-                            </div>
-                            <div class="col-6 forgotPass text-end">
-                                <!-- Simple link -->
-                                <a href="#!">Forgot password?</a>
-                            </div>
-                            <button class="btn btn-outline-primary">Sign in</button>
-                        </div>
-                    </form>
-                    <div class="container mt-4">
-                        <div class="row">
-                            <!-- Social sign up buttons -->
-                            <b>Or sign in with:</b>
-                            <div class="text-center">
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-facebook-f"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-google"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-twitter"></i>
-                                </button>
-
-                                <button type="button" class="btn btn-primary btn-floating mx-1">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- sign in form ends -->
-                </div>
-                <!-- sign in modal body ends -->
-                <!-- sign in modal footer -->
-                <div class="modal-footer">
-                    <P>Don't have an account?</P>
-                    <button class="btn btn-primary" data-bs-target="#signUpModal" data-bs-toggle="modal">Sign
-                        up</button>
-                </div>
-            </div>
-            <!-- sign in modal contents ends -->
+            <?php include_once "CMS/signInModal.php" ?>
         </div>
     </div>
     <!-- sign in modal ends -->
@@ -238,12 +48,12 @@
                 <div class="row h-100">
                     <!-- carousel starts -->
                     <div class="col-md-7">
-                        <?php include_once "../include/slider.php" ?>
+                        <?php include_once "CMS/slider.php" ?>
                     </div>
                     <!-- carousel ends -->
                     <!-- inspiration and anouncement card starts -->
                     <div class="col-md-5 mt-4 mt-md-0">
-                        <?php include_once "../include/sliderCard.php" ?>
+                        <?php include_once "CMS/sliderCard.php" ?>
                     </div>
                     <!-- inspiration and anouncement card ends -->
                 </div>
@@ -266,30 +76,7 @@
             <div class="container mt-4">
                 <h3>About us</h3>
                 <div class="row">
-                    <div class="card cader mb-3" style="max-width: 1200px;">
-                        <div class="row g-0">
-                            <div class="col-md-2 the-coach-image">
-                                <img src="../IMAGE/owner-picture2.png" class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-10 the-coach">
-                                <div class="card-body">
-                                    <h5 class="card-title" id="MeetTheCoach">Meet the coach</h5>
-                                    <p class="card-text">Coach offers business coaching workshop programs that are
-                                        designed
-                                        to step up progress and accelerate results in both your business and personal
-                                        life.
-                                        Our global community of successful entrepreneurs, our highly experienced
-                                        coaches,
-                                        our arsenal of proprietary tools, and our deep-dive strategy sessions are the
-                                        cornerstones of our programs' success.
-                                    </p>
-                                    <a href="#" id="aboutusmoredetailbtn" class="btn btn-outline-primary detail">More
-                                        Details</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include_once "CMS/aboutUsCard.php" ?>
                 </div>
             </div>
         </section>
@@ -308,7 +95,7 @@
             <!-- Our program card starts -->
             <div class="container">
                 <div class="row">
-                    <?php include_once "../include/ourProgramCard.php" ?>
+                    <?php include_once "CMS/ourProgramCard.php" ?>
                 </div>
             </div>
             <!-- Our program card ends -->
@@ -337,7 +124,7 @@
             <!-- success story card starts -->
             <div class="container">
                 <div class="row">
-                    <?php include_once "../include/successPageCard.php" ?>
+                    <?php include_once "CMS/successPageCard.php" ?>
                 </div>
             </div>
             <!-- success story card ends -->
@@ -348,7 +135,7 @@
         <article class="gradient-section mt-5">
             <div class="container d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="max-width: 540px; background: none;">
-                    <?php include_once "../include/bookSalesAdvertCard.php" ?>
+                    <?php include_once "CMS/bookSalesAdvertCard.php" ?>
                 </div>
             </div>
         </article>
@@ -368,7 +155,7 @@
                         <div class="card mb-3 border-0 BookModalCard">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="../IMAGE/book image 2.png" class="img-fluid rounded-start" alt="...">
+                                    <img src="IMAGE/book image 2.png" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -395,7 +182,7 @@
                         <button type="button" class="btn btn-secondary BookModalBtn"
                             data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary BookModalBtn BookModalBtnDnld"><a
-                                class="BookModalBtn" href="../IMAGE/book image 2.png" DOWNLOAD>Download</a></button>
+                                class="BookModalBtn" href="IMAGE/book image 2.png" DOWNLOAD>Download</a></button>
                     </div>
                 </div>
             </div>
@@ -504,7 +291,7 @@
         <div class="container">
             <h1 class="text-center Head1Tag">Blog Page </h1>
             <div class="row row-cols-1 row-cols-md-3 g-4 Head1TagBody">
-                <?php include_once "../include/blogPageCard.php" ?>
+                <?php include_once "CMS/blogPageCard.php" ?>
             </div>
         </div>
     </article>
@@ -563,15 +350,15 @@
 
 
     <footer>
-        <?php include_once '../include/footer.php' ?>
+        <?php include_once 'CMS/footer.php' ?>
     </footer>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<script src="../bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/js/bootstrap.js"></script>
+<script src="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/js/bootstrap.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="../JS/script.js"></script>
+<script src="JS/script.js"></script>
 
 </html>

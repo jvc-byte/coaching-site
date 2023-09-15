@@ -11,7 +11,7 @@
         <div class="card carde card-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-2"><img src="../IMAGE/owner-picture.png" alt="" width="40" height="40"
+                    <div class="col-2"><img src="IMAGE/owner-picture.png" alt="" width="40" height="40"
                             class="image-fluid"></div>
                     <div class="col-10">
                         <h6>an incredible easy method that works for You</h6>
@@ -22,7 +22,7 @@
         <div class="card carde card-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-2"><img src="../IMAGE/owner-picture.png" alt="" width="40" height="40"
+                    <div class="col-2"><img src="IMAGE/owner-picture.png" alt="" width="40" height="40"
                             class="image-fluid"></div>
                     <div class="col-10">
                         <h6>an incredible easy method that works for You</h6>
@@ -33,7 +33,7 @@
         <div class="card carde card-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-2"><img src="../IMAGE/owner-picture.png" alt="" width="40" height="40"
+                    <div class="col-2"><img src="IMAGE/owner-picture.png" alt="" width="40" height="40"
                             class="image-fluid"></div>
                     <div class="col-10">
                         <h6>an incredible easy method that works for You</h6>
@@ -44,7 +44,7 @@
         <div class="card carde card-body">
             <div class="container">
                 <div class="row">
-                    <div class="col-2"><img src="../IMAGE/owner-picture.png" alt="" width="40" height="40"
+                    <div class="col-2"><img src="IMAGE/owner-picture.png" alt="" width="40" height="40"
                             class="image-fluid"></div>
                     <div class="col-10">
                         <h6>an incredible easy method that works for You</h6>

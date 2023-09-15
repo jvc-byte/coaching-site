@@ -1,6 +1,6 @@
 <div class="col col-sm-4 col-lg-3 col-xl-2">
     <div class="card h-100">
-        <img src="../IMAGE/slider-img2.png" class="card-img-top" alt="...">
+        <img src="IMAGE/slider-img2.png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title"> The Benefits of Meditation for Mental Health</h5>
             <p class="card-text">Explore the positive impact of meditation on mental well-being and
