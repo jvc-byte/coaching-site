@@ -8,8 +8,7 @@
     <script src="https://kit.fontawesome.com/13d098a0cf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
     <link rel="stylesheet" href="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-        crossorigin="anonymous" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC%+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
     <title>val web | home</title>
 </head>
@@ -24,7 +23,28 @@
     <div class="modal fade mt-4" id="signUpModal" aria-hidden="true" aria-labelledby="signUpModalLabel"
         data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <?php include_once "CMS/signUpModal.php" ?>
+            <!-- sign up modal content starts -->
+            <div class="modal-content">
+                <!-- modal header starts -->
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signUpModalLabel">Sign up</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <!-- modal header ends -->
+                <!-- modal body starts -->
+                <div class="modal-body">
+                    <?php include_once "CMS/signUpModal.php" ?>
+                </div>
+                <!-- modal body ends -->
+                <!-- modal footer starts -->
+                <div class="modal-footer">
+                    <p>Already have an account?</p>
+                    <button class="btn btn-primary" data-bs-target="#signInModal" data-bs-toggle="modal">Sign
+                        in</button>
+                </div>
+                <!-- modal footer ends -->
+            </div>
+            <!-- sign up modal content ends -->
         </div>
     </div>
     <!-- sign up modal ends -->

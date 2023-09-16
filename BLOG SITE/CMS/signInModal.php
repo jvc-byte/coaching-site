@@ -8,7 +8,7 @@
     <!-- sign in modal body starts -->
     <div class="modal-body">
         <!-- sign in form starts -->
-        <form class="container" action="#" method="get">
+        <form class="container" action="signInModal.php" method="post">
             <div class="row g-2">
                 <div class="col-12">
                     <label for="email" class="visually-hidden">Email</label>
