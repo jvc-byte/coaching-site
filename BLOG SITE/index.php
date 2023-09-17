@@ -372,6 +372,38 @@
     <footer>
         <?php include_once 'CMS/footer.php' ?>
     </footer>
+
+    <!-- JavaScript to open the modal if the session variable is set -->
+    <script>
+        // Variable to track if modal has been opened
+        let modalOpened = false;
+
+        // Get the url parameters
+        const urlParam = new URLSearchParams(window.location.search);
+        const registrationSuccess = urlParam.get("registrationSuccess");
+
+        // Check if registrationSuccess parameter is set to '1'
+        if (registrationSuccess === '1' && !modalOpened) {
+            alert("Registration succcessful");
+            const modal = document.getElementById("signInModal");
+            if (modal) {
+                modal.classList.add("show");
+                modal.style.display = "block";
+            }
+            modalOpened = true; // Set the flag to prevent multiple openings
+        }
+
+        // Add an event listener to close the modal when the close button is clicked
+        document.getElementById("closeModalButton").addEventListener("click", function () {
+            const modal = document.getElementById("signInModal");
+            if (modal) {
+                modal.classList.remove("show");
+                modal.style.display = "none";
+            }
+        });
+    </script>
+
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -380,5 +412,7 @@
 <script src="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/js/bootstrap.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="JS/script.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </html>

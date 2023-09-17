@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
     <link rel="stylesheet" href="../bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <title>val web | home</title>
+    <title>.</title>
 </head>
 
 <body>
     <?php
     if (isset($_POST["submit"])) {
+        // ... Your registration code ...
         $first_name = $_POST["first_name"];
         $last_name = $_POST["last_name"];
         $email = $_POST["email"];
@@ -57,24 +58,40 @@
                 echo "<div class='alert alert-danger'>$error</div>";
             }
         } else {
-            // we will insert the data into database
+            // ... Insert data into the database ...
             $sql = " INSERT INTO user (first_name, last_name, email, password, phone_number, industry, program, chalenges, business_stage, registration_date, terms_and_con) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             $preparestmt = mysqli_stmt_prepare($stmt, $sql);
             if ($preparestmt) {
                 mysqli_stmt_bind_param($stmt, "sssssssssss", $first_name, $last_name, $email, $passwordHash, $phone_number, $industry, $program, $chalenges, $business_stage, $registration_date, $terms_and_con);
                 mysqli_stmt_execute($stmt);
-                echo "<div class='alert alert-success'>You are registered succeesfully</div>";
+                if (mysqli_affected_rows($conn) > 0) {
+                    // Data was inserted successfully
+                    echo "<div class='alert alert-success'>You are registered succeesfully</div>";
+                    header("location: ../index.php?registrationSuccess=1");
+                    exit(); // Exit to prevent further execution
+                } else {
+                    // No rows were affected, registration was not successful
+                    echo "<div class='alert alert-danger'>Registration was not successful!</div>";
+                }
             } else {
                 die("Registration was not successful!");
             }
-        }
 
+
+        }
     }
     ?>
 
-<button class="btn btn-outline-primary ms-md-5  customize get-started" type="submit"
-                data-bs-target="#signUpModal" data-bs-toggle="modal">Click to Login</button>
+
+
+
+
+
+
+
+
+    <a href="../index.php" class="btn btn-outline-primary ms-md-5  customize get-started">Home</a>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

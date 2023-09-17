@@ -229,12 +229,6 @@ body {
     cursor: pointer;
 }
 
-.forgotPass,
-.rememberMe {
-    margin-top: -0.1rem;
-    margin-bottom: 1rem;
-}
-
 .btn-toolbar {
     margin: 10px 0;
 }
