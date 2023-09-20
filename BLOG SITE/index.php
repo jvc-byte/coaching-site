@@ -34,6 +34,31 @@
                 <!-- modal body starts -->
                 <div class="modal-body">
                     <?php include_once "CMS/signUpModal.php" ?>
+                    <div class="container mt-3">
+                        <div class="row">
+                            <!-- Social sign up icon header -->
+                            <strong>Or sign up with:</strong>
+                            <!-- Social sign up icons starts -->
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+                            <!-- Social sign up icons ends -->
+                        </div>
+                    </div>
                 </div>
                 <!-- modal body ends -->
                 <!-- modal footer starts -->
@@ -53,7 +78,50 @@
     <div class="modal fade" id="signInModal" aria-hidden="true" aria-labelledby="signUpModalLabel2" tabindex="-1"
         data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
-            <?php include_once "CMS/signInModal.php" ?>
+            <!-- sign in modal contents starts -->
+            <div class="modal-content">
+                <!-- madal header -->
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="signUpModalLabel2">Sign in</h1>
+                    <button type="button" id="closeModalButton" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <!-- sign in modal body starts -->
+                <div class="modal-body">
+                    <?php include_once "CMS/signInModal.php" ?>
+                    <div class="container mt-4">
+                        <div class="row">
+                            <!-- Social sign up buttons -->
+                            <b>Or sign in with:</b>
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-facebook-f"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-google"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-twitter"></i>
+                                </button>
+
+                                <button type="button" class="btn btn-primary btn-floating mx-1">
+                                    <i class="fab fa-github"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- sign in modal body ends -->
+                <!-- sign in modal footer -->
+                <div class="modal-footer">
+                    <P>Don't have an account?</P>
+                    <button class="btn btn-primary" data-bs-target="#signUpModal" data-bs-toggle="modal">Sign
+                        up</button>
+                </div>
+            </div>
+            <!-- sign in modal contents ends -->
         </div>
     </div>
     <!-- sign in modal ends -->

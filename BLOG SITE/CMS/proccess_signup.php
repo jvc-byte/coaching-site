@@ -32,7 +32,7 @@
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         $errors = array();
 
-        if (empty($first_name) or empty($last_name) or empty($email) or empty($password) or empty($confirm_password) or empty($phone_number) or empty($industry) or empty($chalenges) or empty($business_stage) or empty($registration_date)) {
+        if (empty($first_name) or empty($last_name) or empty($email) or empty($password) or empty($confirm_password) or empty($phone_number) or empty($registration_date)) {
             array_push($errors, "All field are required");
         }
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -44,7 +44,7 @@
         if ($password !== $confirm_password) {
             array_push($errors, "Password does not match");
         }
-        require_once "database_connection.php";
+        include_once "database_connection.php";
 
         $sql = "SELECT * FROM user WHERE email = '$email'";
         $result = mysqli_query($conn, $sql);

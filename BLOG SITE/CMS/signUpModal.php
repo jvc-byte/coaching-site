@@ -15,8 +15,8 @@
         </div>
         <div class="col-6">
             <label for="password" class="visually-hidden">Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password"><i
-                class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye" required></i>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required><i
+                class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye"></i>
         </div>
         <div class="col-6">
             <label for="confirmPassword" class="visually-hidden">Confirm Password</label>
@@ -71,29 +71,4 @@
         <input type="submit" value="Sign up" name="submit" class="btn btn-outline-primary">
     </div>
 </form>
-<div class="container mt-3">
-    <div class="row">
-        <!-- Social sign up icon header -->
-        <strong>Or sign up with:</strong>
-        <!-- Social sign up icons starts -->
-        <div class="text-center">
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-facebook-f"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-google"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-twitter"></i>
-            </button>
-
-            <button type="button" class="btn btn-primary btn-floating mx-1">
-                <i class="fab fa-github"></i>
-            </button>
-        </div>
-        <!-- Social sign up icons ends -->
-    </div>
-</div>
 <!-- sign up form ends -->
