@@ -25,15 +25,15 @@
             <i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye2"></i>
         </div>
         <div class="col-6">
-            <label for="number" class="visually-hidden">Phone Number</label>
-            <input type="number" class="form-control" id="number" name="phone_number" placeholder="Phone Number"
+            <label for="tel" class="visually-hidden">Phone Number</label>
+            <input type="tel" class="form-control" id="tel" name="phone_number" placeholder="Phone Number"
                 required>
         </div>
         <select class="form-select col-6" id="industry" name="industry" aria-label="Select industry" required>
             <option selected>Select industry</option>
-            <option value="tech">Technology</option>
-            <option value="healthcare">Healthcare</option>
-            <option value="agric">Agriculture</option>
+            <option value="Technology">Technology</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Agriculture">Agriculture</option>
         </select>
         <select class="form-select col-6" id="industry" name="program" aria-label="Select program" required>
             <option selected>Select program</option>
@@ -43,9 +43,9 @@
         </select>
         <!--Textarea-->
         <div class="col-6">
-            <textarea id="TextArea" class="md-textarea form-control" name="chalenges"
-                placeholder="Describe your current challenges" required></textarea>
-            <label for="TextArea" class="visually-hidden">Textarea</label>
+            <textarea id="about_us" class="md-textarea form-control" name="about"
+                placeholder="Short note about yourself" required></textarea>
+            <label for="about_us" class="visually-hidden">About me</label>
         </div>
         <!-- Radio buttons -->
         <div class="col-6">
@@ -57,7 +57,7 @@
                 <label for="growth">Growth</label>
             </div>
             <!-- Date input -->
-            <input type="datetime-local" id="coaching_date" name="registration_date" class="form-control" required>
+            <input type="text" id="coaching_date" name="address" class="form-control" placeholder="Address" required>
         </div>
         <!-- terms and condition -->
         <div class="form-check">

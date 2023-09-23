@@ -1,3 +1,31 @@
+// < !--JavaScript to open the modal if the session variable is set-- >
+        // Variable to track if modal has been opened
+        let modalOpened = false;
+
+        // Get the url parameters
+        const urlParam = new URLSearchParams(window.location.search);
+        const registrationSuccess = urlParam.get("registrationSuccess");
+
+        // Check if registrationSuccess parameter is set to '1'
+        if (registrationSuccess === '1' && !modalOpened) {
+            alert("Registration succcessful");
+        const modal = document.getElementById("signInModal");
+        if (modal) {
+            modal.classList.add("show");
+        modal.style.display = "block";
+            }
+        modalOpened = true; // Set the flag to prevent multiple openings
+        }
+
+        // Add an event listener to close the modal when the close button is clicked
+        document.getElementById("closeModalButton").addEventListener("click", function () {
+            const modal = document.getElementById("signInModal");
+        if (modal) {
+            modal.classList.remove("show");
+        modal.style.display = "none";
+            }
+        });
+
 document.addEventListener("DOMContentLoaded", function () {
     // Get all elements with the class 'nav_link'
     var navLinks = document.getElementsByClassName('nav_link');
@@ -16,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-document.getElementById("passwordeye").addEventListener("click", function(){
+document.getElementById("passwordeye").addEventListener("click", function () {
     const passwordInput = document.getElementById("password");
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
@@ -25,7 +53,7 @@ document.getElementById("passwordeye").addEventListener("click", function(){
     }
 })
 
-document.getElementById("passwordeye2").addEventListener("click", function(){
+document.getElementById("passwordeye2").addEventListener("click", function () {
     const passwordInput2 = document.getElementById("confirmPassword");
     if (passwordInput2.type === "password") {
         passwordInput2.type = "text";
@@ -34,7 +62,7 @@ document.getElementById("passwordeye2").addEventListener("click", function(){
     }
 })
 
-document.getElementById("passwordeye3").addEventListener("click", function(){
+document.getElementById("passwordeye3").addEventListener("click", function () {
     const passwordInput3 = document.getElementById("login_password");
     if (passwordInput3.type === "password") {
         passwordInput3.type = "text";
@@ -203,7 +231,7 @@ document.getElementById("ourBlog").addEventListener("click", function () {
     document.getElementById("ContactPage").style.display = "block"
 })
 
-document.getElementById("aboutUs").addEventListener("click", function(){
+document.getElementById("aboutUs").addEventListener("click", function () {
     document.getElementById("nav5").style.color = "#909090"
     document.getElementById("nav2").style.background = "none"
     document.getElementById("nav2").style.color = "#000000"
@@ -229,11 +257,5 @@ $(document).ready(function () {
         } else {
             $('#scroll-to-top').fadeOut();
         }
-    });
-
-    // Scroll to top when the button is clicked
-    $('#scroll-to-top').click(function () {
-        $('html, body').animate({ scrollTop: 0 }, 800); // Adjust the speed (800ms) if needed
-        return false;
     });
 });

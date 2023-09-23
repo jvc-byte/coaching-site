@@ -25,6 +25,15 @@
         </header>
         <?php include_once "CMS/ourProgramPageCard.php" ?>
         <footer class="mt-5">
+          <div class="container">
+            <div class="row">
+              <div class="col text-center">No matter which program you've chosen, remember that your commitment and active
+                participation are key to achieving business growth. Regularly revisit this dashboard for
+                program-specific updates and resources to support your journey.
+                <p class="text-center">Best of luck with your business growth endeavors!</p>
+              </div>
+            </div>
+          </div>
           <p class="text-center">Contact us for more information: contact@example.com</p>
         </footer>
       </div>

@@ -11,6 +11,13 @@
                 required><i class="fa-regular fa-eye fa-bounce pass_eye" id="passwordeye3"></i>
         </div>
 
+        <select class="form-select col-6" id="industry" name="program" aria-label="Select program" required>
+            <option selected>Select program</option>
+            <option value="classic">classic</option>
+            <option value="p2p">p2p</option>
+            <option value="virtual">virtual</option>
+        </select>
+
         <div class="form-check rememberMe col-6">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">Remember me</label>

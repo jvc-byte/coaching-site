@@ -11,7 +11,7 @@
         </div>
         <div class="card-body">
             <a href="#" class="card-link btn btn-outline-primary  cardLink" data-bs-toggle="modal"
-                data-bs-target="#classicprog">More Details</a>
+                data-bs-target="#classicprog">Levels, Dates & Fees</a>
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@
         </div>
         <div class="card-body">
             <a href="#" class="card-link btn btn-outline-primary cardLink" data-bs-target="#p2pprog"
-                data-bs-toggle="modal">More Details</a>
+                data-bs-toggle="modal">Levels, Dates & Fees</a>
         </div>
     </div>
 </div>
@@ -47,7 +47,7 @@
         </div>
         <div class="card-body">
             <a href="#" class="card-link btn btn-outline-primary cardLink" data-bs-target="#virtualprog"
-                data-bs-toggle="modal">More Details</a>
+                data-bs-toggle="modal">Levels, Dates & Fees</a>
         </div>
     </div>
 </div>
@@ -90,7 +90,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Levels, Dates & Fees</a>
+                <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Enroll</a>
             </div>
         </div>
     </div>
@@ -133,7 +133,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Levels, Dates & Fees</a>
+                <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Enroll</a>
             </div>
         </div>
     </div>
@@ -177,7 +177,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Levels, Dates & Fees</a>
+                <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Enroll</a>
             </div>
         </div>
     </div>

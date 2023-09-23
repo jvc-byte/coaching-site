@@ -278,6 +278,23 @@ h6 {
   background-color: #f6f9ff;
 }
 
+.accordion-flush .accordion-button {
+  padding: 15px 0;
+  background: none;
+  border: 0;
+}
+
+.accordion-flush .accordion-button:not(.collapsed) {
+  box-shadow: none;
+  color: #4154f1;
+}
+
+.accordion-flush .accordion-body {
+  padding: 0 0 15px 0;
+  color: #3e4f6f;
+  font-size: 15px;
+}
+
 /* Breadcrumbs */
 .breadcrumb {
   font-size: 14px;
@@ -685,16 +702,6 @@ h6 {
   color: #4154f1;
   background: #f6f9ff;
 }
-
-.sidebar-nav .nav-link:focus {
-  color: #4154f1;
-  background: #f6f9ff;
-}
-
-.sidebar-nav .nav-link:hover i {
-  color: #4154f1;
-}
-
 
 /*--------------------------------------------------------------
 # Dashboard

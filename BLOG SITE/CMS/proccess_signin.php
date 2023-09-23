@@ -14,23 +14,59 @@
 
 <body>
     <?php
+    include "database_connection.php";
+    session_start();
     if (isset($_POST["signin"])) {
         $email = $_POST["email"];
         $password = $_POST["password"];
-        require_once "database_connection.php";
-        $sql = "SELECT * FROM user WHERE email = '$email'";
-        $result = mysqli_query($conn, $sql);
-        $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        if ($user) {
-            if (password_verify($password, $user["password"])) {
-                header("location: ../USER_DASHBOARD/dashboard.php");
-                die();
-            }else{
-                echo "<div class='alert alert-danger'>Incorrect password</div>";
+        $program = $_POST["program"];
+
+        // query the MYSQL database
+        $email_query = "SELECT * FROM user WHERE email = '$email'";
+        $result = mysqli_query($conn, $email_query);
+        $row_count = mysqli_num_rows($result); // check if the email exists
+    
+        if ($row_count > 0) {
+
+            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+            if ($row["program"] == "classic") {
+                $_SESSION["classic_name"] = $row["first_name"];
+
+                if (password_verify($password, $row["password"])) {
+                    $_SESSION["id"] = $row["id"];
+                    header("location: ../USER_DASHBOARD/CLASSIC/classic.php");
+                    die();
+                } else {
+                    echo "<div class='alert alert-danger'>Incorrect password</div>";
+                }
+            } elseif ($row["program"] == "p2p") {
+                $_SESSION["p2p_name"] = $row["first_name"];
+
+                if (password_verify($password, $row["password"])) {
+                    $_SESSION["id"] = $row["id"];
+                    header("location: ../USER_DASHBOARD/P2P/p2p.php");
+                    die();
+                } else {
+                    echo "<div class='alert alert-danger'>Incorrect password</div>";
+                }
+            } elseif ($row["program"] == "virtual") {
+                $_SESSION["virtual_name"] = $row["first_name"];
+
+                if (password_verify($password, $row["password"])) {
+                    $_SESSION["id"] = $row["id"];
+                    header("location: ../USER_DASHBOARD/VIRTUAL/virtual.php");
+                    die();
+                } else {
+                    echo "<div class='alert alert-danger'>Incorrect password</div>";
+                }
+            } else {
+                echo "<div class='alert alert-danger'>Incorrect email</div>";
             }
-        } else {
-            echo "<div class='alert alert-danger'>Incorrect email</div>";
         }
+
+    } else {
+        echo "<div class='alert alert-danger'>User not found</div>";
     }
     ?>
 

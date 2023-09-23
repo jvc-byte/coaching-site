@@ -1,10 +1,12 @@
-(function () {
+/**
+* Template Name: NiceAdmin
+* Updated: Sep 18 2023 with Bootstrap v5.3.2
+* Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+(function() {
   "use strict";
-
-  document.getElementById("nav_link1b").addEventListener("click", function(){
-    document.getElementById("nav_link1a").style.color = "#4154f1"
-    document.getElementById("nav_link1b").style.color = "#4154f1"
-  })
 
   /**
    * Easy selector helper function
@@ -40,7 +42,7 @@
    * Sidebar toggle
    */
   if (select('.toggle-sidebar-btn')) {
-    on('click', '.toggle-sidebar-btn', function (e) {
+    on('click', '.toggle-sidebar-btn', function(e) {
       select('body').classList.toggle('toggle-sidebar')
     })
   }
@@ -49,7 +51,7 @@
    * Search bar toggle
    */
   if (select('.search-bar-toggle')) {
-    on('click', '.search-bar-toggle', function (e) {
+    on('click', '.search-bar-toggle', function(e) {
       select('.search-bar').classList.toggle('search-bar-show')
     })
   }
@@ -107,21 +109,13 @@
   }
 
   /**
-   * Initiate tooltips
-   */
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl)
-  })
-
-  /**
    * Initiate Bootstrap validation check
    */
   var needsValidation = document.querySelectorAll('.needs-validation')
 
   Array.prototype.slice.call(needsValidation)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
+    .forEach(function(form) {
+      form.addEventListener('submit', function(event) {
         if (!form.checkValidity()) {
           event.preventDefault()
           event.stopPropagation()
@@ -130,19 +124,5 @@
         form.classList.add('was-validated')
       }, false)
     })
-
-  /**
-   * Autoresize echart charts
-   */
-  const mainContainer = select('#main');
-  if (mainContainer) {
-    setTimeout(() => {
-      new ResizeObserver(function () {
-        select('.echart', true).forEach(getEchart => {
-          echarts.getInstanceByDom(getEchart).resize();
-        })
-      }).observe(mainContainer);
-    }, 200);
-  }
 
 })();

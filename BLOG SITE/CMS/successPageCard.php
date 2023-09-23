@@ -10,8 +10,7 @@
             </footer>
         </div>
         <div class="card-body">
-            <a href="#" class="card-link btn btn-outline-primary  cardLink" data-bs-toggle="modal"
-                data-bs-target="#signUpModal">Call to Action</a>
+            <a href="ourProgrampage.php" class="card-link btn btn-outline-primary  cardLink">Join the journey</a>
         </div>
     </div>
 </div>
@@ -27,8 +26,7 @@
             </footer>
         </div>
         <div class="card-body">
-            <a href="#" class="card-link btn btn-outline-primary cardLink" data-bs-toggle="modal"
-                data-bs-target="#signUpModal">Call to Action</a>
+            <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Join the journey</a>
         </div>
     </div>
 </div>
@@ -45,8 +43,7 @@
             </footer>
         </div>
         <div class="card-body">
-            <a href="#" class="card-link btn btn-outline-primary cardLink" data-bs-toggle="modal"
-                data-bs-target="#signUpModal">Call to Action</a>
+            <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Join the journey</a>
         </div>
     </div>
 </div>
@@ -63,8 +60,7 @@
             </footer>
         </div>
         <div class="card-body">
-            <a href="#" class="card-link btn btn-outline-primary cardLink" data-bs-toggle="modal"
-                data-bs-target="#signUpModal">Call to Action</a>
+            <a href="ourProgrampage.php" class="card-link btn btn-outline-primary cardLink">Join the journey</a>
         </div>
     </div>
 </div>

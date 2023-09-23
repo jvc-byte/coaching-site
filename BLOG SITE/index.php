@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="IMAGE/logo.jpg" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="IMAGE/logo.jpg" type="image/x-icon"> -->
+    <!-- Favicons -->
+    <link href="IMAGE/favicon.png" rel="icon">
+    <link href="IMAGE/apple-touch-icon.png" rel="apple-touch-icon">
     <script src="https://kit.fontawesome.com/13d098a0cf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
     <link rel="stylesheet" href="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
@@ -430,47 +433,11 @@
         <a href="#" class="btn btn-outline-primary detail">advert placement </a>
     </article>
     <!-- advert placement ends here -->
-    <!-- javascript scroll to top starts here -->
-    <button id="scroll-to-top" class="btn btn-primary btn-lg back-to-top" style="display: none;">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
-    <!-- javascript scroll to top ends here -->
 
 
     <footer>
         <?php include_once 'CMS/footer.php' ?>
     </footer>
-
-    <!-- JavaScript to open the modal if the session variable is set -->
-    <script>
-        // Variable to track if modal has been opened
-        let modalOpened = false;
-
-        // Get the url parameters
-        const urlParam = new URLSearchParams(window.location.search);
-        const registrationSuccess = urlParam.get("registrationSuccess");
-
-        // Check if registrationSuccess parameter is set to '1'
-        if (registrationSuccess === '1' && !modalOpened) {
-            alert("Registration succcessful");
-            const modal = document.getElementById("signInModal");
-            if (modal) {
-                modal.classList.add("show");
-                modal.style.display = "block";
-            }
-            modalOpened = true; // Set the flag to prevent multiple openings
-        }
-
-        // Add an event listener to close the modal when the close button is clicked
-        document.getElementById("closeModalButton").addEventListener("click", function () {
-            const modal = document.getElementById("signInModal");
-            if (modal) {
-                modal.classList.remove("show");
-                modal.style.display = "none";
-            }
-        });
-    </script>
-
 
 </body>
 
