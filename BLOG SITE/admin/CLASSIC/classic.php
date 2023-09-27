@@ -306,7 +306,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Dashboard - Classic</h1>
+      <h1>Dashboard - Admin</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="classic.php">Home</a></li>
