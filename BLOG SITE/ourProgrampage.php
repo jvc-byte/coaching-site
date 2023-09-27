@@ -23,7 +23,7 @@
           <h1 class="text-center coachprograms py-5">Welcome to Our Coaching Programs</h1>
           <a href="index.php"><button class="btn btn-outline-primary text-start homefromourprogpage">Home</button></a>
         </header>
-        <?php include_once "CMS/ourProgramPageCard.php" ?>
+        <?php include_once "include/ourProgramPageCard.php" ?>
         <footer class="mt-5">
           <div class="container">
             <div class="row">

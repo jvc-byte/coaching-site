@@ -60,6 +60,10 @@
                 } else {
                     echo "<div class='alert alert-danger'>Incorrect password</div>";
                 }
+            } elseif ($row["user_type"] == "admin") {
+                $_SESSION["admin"] = $row["user_type"];
+                header("location: ../admin/CLASSIC/classic.php");
+                die();
             } else {
                 echo "<div class='alert alert-danger'>Incorrect email</div>";
             }

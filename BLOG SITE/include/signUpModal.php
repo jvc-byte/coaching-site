@@ -1,5 +1,5 @@
 <!-- sign up form starts -->
-<form class="container" action="CMS/proccess_signup.php" method="post">
+<form class="container" action="include/proccess_signup.php" method="post">
     <div class="row g-2">
         <div class="col-6">
             <label for="firstname" class="visually-hidden">First Name</label>

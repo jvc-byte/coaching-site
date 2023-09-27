@@ -2,7 +2,7 @@
 
 session_start();
 
-include "../../CMS/database_connection.php";
+include "../../include/database_connection.php";
 
 $user_id = $_SESSION["id"];
 $user = "SELECT * From user WHERE id = '$user_id'";

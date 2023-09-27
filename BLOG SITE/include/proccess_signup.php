@@ -12,7 +12,7 @@
     <title>.</title>
 </head>
 
-<body>
+<body class="mt-5">
     <?php
     // Include the database connection script
     include "database_connection.php";
@@ -54,7 +54,7 @@
         $email_query = "SELECT * FROM user WHERE email = '$email'";
         $result = mysqli_query($conn, $email_query); // query the datadase_connecction.php then query the db table(user) to check for the email 
         $row_count = mysqli_num_rows($result); // check if the email exists
-        
+    
         if ($row_count > 0) {
             array_push($errors, "Email already exists!");
         }
@@ -62,13 +62,13 @@
         // Display all the validation errors
         if (count($errors) > 0) {
             foreach ($errors as $error) {
-                echo "<div class='alert alert-danger'>$error</div>";
+                echo "<div class='container'><div class='text-center alert alert-danger'>$error</div></div>";
             }
         } else {
             // If there are no errors, insert the user's data into the database
             $insert_query = " INSERT INTO user (first_name, last_name, email, password, phone_number, industry, program, about, business_stage, address) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn); //initialize MYSQL statement object
-            $preparestmt = mysqli_stmt_prepare($stmt, $insert_query);//prepare statem
+            $preparestmt = mysqli_stmt_prepare($stmt, $insert_query); //prepare statem
             if ($preparestmt) {
                 mysqli_stmt_bind_param($stmt, "ssssssssss", $first_name, $last_name, $email, $passwordHash, $phone_number, $industry, $program, $about, $business_stage, $address);
                 mysqli_stmt_execute($stmt);
@@ -83,7 +83,7 @@
             } else {
                 die("Registration was not successful!");
             }
-            
+
         }
     }
     mysqli_close($conn);
@@ -98,7 +98,14 @@
 
 
 
-    <a href="../index.php" class="btn btn-outline-primary ms-md-5  customize get-started">Home</a>
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center g-2">
+                <h4 class="text-primary mx-2">Try again</h4>
+            <a href="../index.php" class="btn btn-outline-primary">Home</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

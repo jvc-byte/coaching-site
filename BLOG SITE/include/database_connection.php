@@ -6,6 +6,7 @@ $dbPassword = "";
 $dbName = "blog site";
 $conn = mysqli_connect($hostName, $dbUser, $dbPassword, $dbName);
 if (!$conn) {
-    die("Something went wrong;");
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+	die();
 }
 ?>

@@ -1,4 +1,5 @@
-<div id="valCarousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="4000" data-bs-wrap="true">
+<div id="valCarousel" class="carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="4000"
+    data-bs-wrap="true">
     <!-- carousel indicators starts -->
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="0" class="active" aria-current="true"

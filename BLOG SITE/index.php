@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+include "include/database_connection.php";
+$slider = "SELECT * From slider";
+$result = mysqli_query($conn, $slider);
+$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +29,7 @@
 
 <body>
     <header>
-        <?php include_once 'CMS/header.php' ?>
+        <?php include_once 'include/header.php' ?>
     </header>
 
     <!-- Modal for sign up and sign in starts -->
@@ -36,7 +47,7 @@
                 <!-- modal header ends -->
                 <!-- modal body starts -->
                 <div class="modal-body">
-                    <?php include_once "CMS/signUpModal.php" ?>
+                    <?php include_once "include/signUpModal.php" ?>
                     <div class="container mt-3">
                         <div class="row">
                             <!-- Social sign up icon header -->
@@ -91,7 +102,7 @@
                 </div>
                 <!-- sign in modal body starts -->
                 <div class="modal-body">
-                    <?php include_once "CMS/signInModal.php" ?>
+                    <?php include_once "include/signInModal.php" ?>
                     <div class="container mt-4">
                         <div class="row">
                             <!-- Social sign up buttons -->
@@ -139,12 +150,12 @@
                 <div class="row h-100">
                     <!-- carousel starts -->
                     <div class="col-md-7">
-                        <?php include_once "CMS/slider.php" ?>
+                        <?php include_once "include/slider.php" ?>
                     </div>
                     <!-- carousel ends -->
                     <!-- inspiration and anouncement card starts -->
                     <div class="col-md-5 mt-4 mt-md-0">
-                        <?php include_once "CMS/sliderCard.php" ?>
+                        <?php include_once "include/sliderCard.php" ?>
                     </div>
                     <!-- inspiration and anouncement card ends -->
                 </div>
@@ -167,7 +178,7 @@
             <div class="container mt-4">
                 <h3>About us</h3>
                 <div class="row">
-                    <?php include_once "CMS/aboutUsCard.php" ?>
+                    <?php include_once "include/aboutUsCard.php" ?>
                 </div>
             </div>
         </section>
@@ -186,7 +197,7 @@
             <!-- Our program card starts -->
             <div class="container">
                 <div class="row">
-                    <?php include_once "CMS/ourProgramCard.php" ?>
+                    <?php include_once "include/ourProgramCard.php" ?>
                 </div>
             </div>
             <!-- Our program card ends -->
@@ -215,7 +226,7 @@
             <!-- success story card starts -->
             <div class="container">
                 <div class="row">
-                    <?php include_once "CMS/successPageCard.php" ?>
+                    <?php include_once "include/successPageCard.php" ?>
                 </div>
             </div>
             <!-- success story card ends -->
@@ -226,7 +237,7 @@
         <article class="gradient-section mt-5">
             <div class="container d-flex justify-content-center align-items-center">
                 <div class="card border-0" style="max-width: 540px; background: none;">
-                    <?php include_once "CMS/bookSalesAdvertCard.php" ?>
+                    <?php include_once "include/bookSalesAdvertCard.php" ?>
                 </div>
             </div>
         </article>
@@ -382,7 +393,7 @@
         <div class="container">
             <h1 class="text-center Head1Tag">Blog Page </h1>
             <div class="row row-cols-1 row-cols-md-3 g-4 Head1TagBody">
-                <?php include_once "CMS/blogPageCard.php" ?>
+                <?php include_once "include/blogPageCard.php" ?>
             </div>
         </div>
     </article>
@@ -436,7 +447,7 @@
 
 
     <footer>
-        <?php include_once 'CMS/footer.php' ?>
+        <?php include_once 'include/footer.php' ?>
     </footer>
 
 </body>

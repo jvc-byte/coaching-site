@@ -1,5 +1,5 @@
 <!-- sign in form starts -->
-<form class="container" action="CMS/proccess_signin.php" method="post">
+<form class="container" action="include/proccess_signin.php" method="post">
     <div class="row g-2">
         <div class="col-12">
             <label for="email" class="visually-hidden">Email</label>

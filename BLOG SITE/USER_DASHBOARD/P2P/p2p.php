@@ -2,7 +2,7 @@
 
 session_start();
 
-include "../../CMS/database_connection.php";
+include "../../include/database_connection.php";
 
 if(!isset($_SESSION["p2p_name"])){
  header("location: ../../index.php"); 
