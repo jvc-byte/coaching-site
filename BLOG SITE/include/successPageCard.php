@@ -1,6 +1,6 @@
 <div class="col-md-3 caders">
     <div class="card success_card">
-        <img src="IMAGE/div.post-image.png" class="card-img-top" alt="...">
+        <img src="image/div.post-image.png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Is Val Coach Worth the Investment?</h5>
             <p class="card-text">Our members reveal how they've made the most of their investments.
@@ -17,7 +17,7 @@
 
 <div class="col-md-3 caders">
     <div class="card success_card">
-        <img src="IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
+        <img src="image/div.post-image (1).png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Thinking About Val Coach? Here's What You Should Know.</h5>
             <p class="card-text">Our members answer your top questions about val Coaching.</p>
@@ -33,7 +33,7 @@
 
 <div class="col-md-3 caders">
     <div class="card success_card">
-        <img src="IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
+        <img src="image/div.post-image (1).png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Exploring Val Coach: Is It the Right Fit for Your Journey?</h5>
             <p class="card-text">Maxwell Property Management </p>
@@ -50,7 +50,7 @@
 
 <div class="col-md-3 caders">
     <div class="card success_card">
-        <img src="IMAGE/div.post-image (1).png" class="card-img-top" alt="...">
+        <img src="image/div.post-image (1).png" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Unlocking the Value of Val Coach: Is It Right for You?</h5>
             <p class="card-text">JDRM Dental Care Ltd.</p>

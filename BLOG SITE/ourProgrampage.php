@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="IMAGE/logo.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="image/logo.jpg" type="image/x-icon">
   <script src="https://kit.fontawesome.com/13d098a0cf.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
   <link rel="stylesheet" href="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
     crossorigin="anonymous" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC%+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9">
-  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
 

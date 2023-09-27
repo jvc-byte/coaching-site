@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="IMAGE/logo.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="image/logo.jpg" type="image/x-icon">
     <script src="https://kit.fontawesome.com/13d098a0cf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
     <link rel="stylesheet" href="../bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
@@ -35,7 +35,7 @@
 
                 if (password_verify($password, $row["password"])) {
                     $_SESSION["id"] = $row["id"];
-                    header("location: ../USER_DASHBOARD/CLASSIC/classic.php");
+                    header("location: ../user_dashboard/classic/classic.php");
                     die();
                 } else {
                     echo "<div class='alert alert-danger'>Incorrect password</div>";
@@ -45,7 +45,7 @@
 
                 if (password_verify($password, $row["password"])) {
                     $_SESSION["id"] = $row["id"];
-                    header("location: ../USER_DASHBOARD/P2P/p2p.php");
+                    header("location: ../user_dashboard/p2p/p2p.php");
                     die();
                 } else {
                     echo "<div class='alert alert-danger'>Incorrect password</div>";
@@ -55,14 +55,14 @@
 
                 if (password_verify($password, $row["password"])) {
                     $_SESSION["id"] = $row["id"];
-                    header("location: ../USER_DASHBOARD/VIRTUAL/virtual.php");
+                    header("location: ../user_dashboard/virtual/virtual.php");
                     die();
                 } else {
                     echo "<div class='alert alert-danger'>Incorrect password</div>";
                 }
             } elseif ($row["user_type"] == "admin") {
                 $_SESSION["admin"] = $row["user_type"];
-                header("location: ../admin/CLASSIC/classic.php");
+                header("location: ../admin/pages/index.php");
                 die();
             } else {
                 echo "<div class='alert alert-danger'>Incorrect email</div>";

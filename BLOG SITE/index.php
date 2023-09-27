@@ -15,15 +15,15 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="shortcut icon" href="IMAGE/logo.jpg" type="image/x-icon"> -->
+    <!-- <link rel="shortcut icon" href="image/logo.jpg" type="image/x-icon"> -->
     <!-- Favicons -->
-    <link href="IMAGE/favicon.png" rel="icon">
-    <link href="IMAGE/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="image/favicon.png" rel="icon">
+    <link href="image/apple-touch-icon.png" rel="apple-touch-icon">
     <script src="https://kit.fontawesome.com/13d098a0cf.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia" />
     <link rel="stylesheet" href="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>val web | home</title>
 </head>
 
@@ -257,7 +257,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                         <div class="card mb-3 border-0 BookModalCard">
                             <div class="row g-0">
                                 <div class="col-md-4">
-                                    <img src="IMAGE/book image 2.png" class="img-fluid rounded-start" alt="...">
+                                    <img src="image/book image 2.png" class="img-fluid rounded-start" alt="...">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
@@ -284,7 +284,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                         <button type="button" class="btn btn-secondary BookModalBtn"
                             data-bs-dismiss="modal">Close</button>
                         <button type="button" class="btn btn-primary BookModalBtn BookModalBtnDnld"><a
-                                class="BookModalBtn" href="IMAGE/book image 2.png" DOWNLOAD>Download</a></button>
+                                class="BookModalBtn" href="image/book image 2.png" DOWNLOAD>Download</a></button>
                     </div>
                 </div>
             </div>
@@ -457,7 +457,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="bootstrap-5.3.1-dist/bootstrap-5.3.1-dist/js/bootstrap.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="JS/script.js"></script>
+<script src="js/script.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 

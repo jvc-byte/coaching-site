@@ -1,7 +1,7 @@
 <div class="card cader mb-3" style="max-width: 1200px;">
     <div class="row g-0">
         <div class="col-md-2 the-coach-image">
-            <img src="IMAGE/owner-picture2.png" class="img-fluid rounded-start" alt="...">
+            <img src="image/owner-picture2.png" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-10 the-coach">
             <div class="card-body">

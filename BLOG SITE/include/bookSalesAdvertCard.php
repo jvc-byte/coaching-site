@@ -1,6 +1,6 @@
 <div class="row g-0">
     <div class="col-md-4">
-        <img src="IMAGE/book image 2.png" class="img-fluid rounded-start" alt="...">
+        <img src="image/book image 2.png" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8 BookAnimate">
         <div class="card-body">
