@@ -29,7 +29,7 @@
                 data-bs-target="#signUpModal" data-bs-toggle="modal">Get
                     started</button>
                     <button class="btn btn-outline-primary ms-md-5  customize get-started" type="submit"
-                data-bs-target="#signInModal" id="openSignInModal" data-bs-toggle="modal">CLient login</button>
+                data-bs-target="#signInModal" id="openSignInModal" data-bs-toggle="modal">Client login</button>
             </div>
         </div>
     </nav>

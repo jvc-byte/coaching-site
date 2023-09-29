@@ -197,11 +197,16 @@ include "include/database_connection.php";
             <!-- Our program card ends -->
             <!-- some texts below our programs card starts -->
             <div class="container-sm text-center mt-4">
-                <p>Our Signature Program, offered both in person and virtually,
-                    provides a rare opportunity to plan for the future, determine how best to get there, and what's most
-                    pressing in your business right now. Each option gives you the chance to gain new insights from
-                    people in other industries and other parts of the world. You'll come away with prioritized, concrete
-                    action steps, new tools and capabilities, and a plan for the next 90 days.
+                <p>
+                    <small>
+                        Our Signature Program, offered both in person and virtually,
+                        provides a rare opportunity to plan for the future, determine how best to get there, and what's
+                        most
+                        pressing in your business right now. Each option gives you the chance to gain new insights from
+                        people in other industries and other parts of the world. You'll come away with prioritized,
+                        concrete
+                        action steps, new tools and capabilities, and a plan for the next 90 days.
+                    </small>
                 </p>
             </div>
             <!-- some texts below our programs card starts -->

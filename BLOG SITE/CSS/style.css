@@ -3,11 +3,34 @@
     padding: 0;
     list-style: none;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: Open Sans;
 }
 
 a {
     text-decoration: none;
+}
+
+h3 {
+    color: rgba(2, 2, 169, 1);
+    font-weight: 800;
+}
+
+h1 {
+    color: rgba(2, 2, 169, 1);
+}
+
+h3+p {
+    color: rgb(4, 4, 130);
+    font-size: large;
+}
+
+p small {
+    color: rgb(4, 4, 130);
+}
+
+.modal-body p{
+    color: #0202a9;
+    text-align: justify;
 }
 
 /*******************************************************************************************************************************************************/
@@ -29,9 +52,7 @@ a {
 
 .navbar ul li a {
     padding: 10px 10px;
-    font-family: Open Sans;
     font-size: 1rem;
-    font-style: normal;
     font-weight: 700;
     line-height: 142.857%;
 }
@@ -46,9 +67,7 @@ a {
     border: 2px solid blue;
     background: none;
     color: blue;
-    font-family: Open Sans;
     font-size: 1rem;
-    font-style: normal;
     font-weight: 700;
 }
 
@@ -61,10 +80,8 @@ a {
 
 .navbar-logo {
     color: blue;
-    font-family: Open Sans;
     font-size: 2em;
-    font-style: normal;
-    font-weight: 800;
+    font-weight: 700;
     line-height: 66.667%;
 }
 
@@ -248,9 +265,7 @@ body {
     border-radius: 2rem;
     border: 2px solid blue;
     color: blue;
-    font-family: Open Sans;
     font-size: 1rem;
-    font-style: normal;
     font-weight: 700;
 }
 
@@ -345,7 +360,7 @@ body {
 }
 
 .learnReg {
-    color: rgba(72, 72, 254, 0.45);
+    color: rgba(72, 72, 254, 0.7);
     font-size: xx-large;
 }
 
@@ -421,10 +436,6 @@ body {
 
 /* Underline animation for book sale ends here */
 
-h3 {
-    color: rgba(2, 2, 169, 1);
-}
-
 .card-title {
     color: rgba(2, 2, 169, 1);
 }
@@ -434,14 +445,14 @@ h3 {
     color: white;
 }
 
-p {
-    color: rgb(4, 4, 130);
-    text-align: justify;
-}
-
 #MeetTheCoach,
 #ModalBookTitle {
     color: rgba(2, 2, 200, 1);
+}
+
+.card-body p {
+    color: rgb(4, 4, 130);
+    text-align: justify;
 }
 
 .back-to-top {

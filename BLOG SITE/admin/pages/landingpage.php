@@ -327,7 +327,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">FORM FOR SLIDER</h5>
+              <h5 class="card-title">SLIDER HOMEPAGE</h5>
 
               <!-- Slider Labels Form -->
               <form action="sliderproccess.php" method="post" enctype="multipart/form-data" class="row g-3">
@@ -394,125 +394,103 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
               </form><!-- End slider Form -->
 
             </div>
-          </div><!-- form for slider hompage ends -->
+          </div><!-- slider hompage ends -->
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">FORM FOR CARD BESIDE SLIDER</h5>
+              <h5 class="card-title w-100">ANOUNCEMENT AND INSPIRATION HOMEPAGE</h5>
 
-              <!-- Floating Labels Form -->
-              <form class="row g-3">
+              <!-- CARD BESIDE SLIDER homepage -->
+              <form action="sliderCardproccess.php" method="post" enctype="multipart/form-data" class="row g-3">
+                <?php
+                // Check if the empty_field message is set in the session
+                if (isset($_SESSION["empty_field"])) {
+                  echo $_SESSION["empty_field"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["empty_field"]);
+                }
+
+                // Check if the insert_ok message is set in the session
+                if (isset($_SESSION["insert_ok"])) {
+                  echo $_SESSION["insert_ok"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["insert_ok"]);
+                }
+
+                // Check if the insert_bad message is set in the session
+                if (isset($_SESSION["insert_bad"])) {
+                  echo $_SESSION["insert_bad"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["insert_bad"]);
+                }
+
+                // Check if the proccess_bad message is set in the session
+                if (isset($_SESSION["proccess_bad"])) {
+                  echo $_SESSION["proccess_bad"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["proccess_bad"]);
+                }
+
+                // Check if the proccess_cancel message is set in the session
+                if (isset($_SESSION["proccess_cancel"])) {
+                  echo $_SESSION["proccess_cancel"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["proccess_cancel"]);
+                }
+                ?>
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
-                    <label for="floatingName">Your Name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="Your Email">
-                    <label for="floatingEmail">Your Email</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
+                    <input type="file" class="form-control" name="image2" id="floatingName" placeholder="Upload Image"
+                      accept="image/*">
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
-                      style="height: 100px;"></textarea>
-                    <label for="floatingTextarea">Address</label>
+                    <textarea class="form-control" name="inspire_text" placeholder="inspiration" id="floatingTextarea"
+                      style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">inspiration</label>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="col-md-12">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingCity" placeholder="City">
-                      <label for="floatingCity">City</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="State">
-                      <option selected>New York</option>
-                      <option value="1">Oregon</option>
-                      <option value="2">DC</option>
-                    </select>
-                    <label for="floatingSelect">State</label>
-                  </div>
-                </div>
-                <div class="col-md-2">
+                <div class="col-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingZip" placeholder="Zip">
-                    <label for="floatingZip">Zip</label>
+                    <textarea class="form-control" name="announce_text" placeholder="announcement" id="floatingTextarea"
+                      style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">announcement</label>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Upload</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Upload</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
-              </form><!-- End floating Labels Form -->
+              </form><!-- End CARD BESIDE SLIDER -->
 
             </div>
-          </div><!-- form for about us homepage ends -->
+          </div><!-- anouncement and inspiration homepage ends -->
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">FORM FOR ABOUT US HOMEPAGE</h5>
+              <h5 class="card-title">ABOUT US HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
+                    <input type="file" class="form-control" id="floatingName" placeholder="Your Name">
                     <label for="floatingName">Your Name</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="Your Email">
-                    <label for="floatingEmail">Your Email</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
                     <textarea class="form-control" placeholder="Address" id="floatingTextarea"
-                      style="height: 100px;"></textarea>
+                      style="height: 50px;"></textarea>
                     <label for="floatingTextarea">Address</label>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="col-md-12">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingCity" placeholder="City">
-                      <label for="floatingCity">City</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="State">
-                      <option selected>New York</option>
-                      <option value="1">Oregon</option>
-                      <option value="2">DC</option>
-                    </select>
-                    <label for="floatingSelect">State</label>
-                  </div>
-                </div>
-                <div class="col-md-2">
+                <div class="col-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingZip" placeholder="Zip">
-                    <label for="floatingZip">Zip</label>
+                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
+                      style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">Address</label>
                   </div>
                 </div>
                 <div class="text-center">
@@ -522,7 +500,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
               </form><!-- End floating Labels Form -->
 
             </div>
-          </div>
+          </div><!-- about us homepage ends -->
 
         </div>
 
@@ -530,7 +508,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">FORM FOR OUR PROGRAM HOMEPAGE</h5>
+              <h5 class="card-title">OUR PROGRAM HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
@@ -594,7 +572,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">FORM FOR SUCCESS STORIES HOMEPAGE</h5>
+              <h5 class="card-title">SUCCESS STORIES HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
@@ -658,7 +636,8 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">FORM FOR BOOK DOWNLOAD HOMEPAGE</h5>
+              <h5 class="card-title">
+                BOOK DOWNLOAD HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
