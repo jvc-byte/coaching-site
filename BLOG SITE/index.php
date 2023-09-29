@@ -1,12 +1,6 @@
 <?php
-
 session_start();
-
 include "include/database_connection.php";
-$slider = "SELECT * From slider";
-$result = mysqli_query($conn, $slider);
-$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
 ?>
 
 <!DOCTYPE html>

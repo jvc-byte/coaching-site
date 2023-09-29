@@ -287,7 +287,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
       <li class="nav-item">
         <a class="nav-link collapsed" href="landingpage.php">
           <i class="bi bi-question-circle"></i>
-          <span>F.A.Q</span>
+          <span>Landing Page</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 

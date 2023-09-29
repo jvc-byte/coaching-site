@@ -2,59 +2,39 @@
     data-bs-wrap="true">
     <!-- carousel indicators starts -->
     <div class="carousel-indicators">
-        <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="0" class="active" aria-current="true"
-            aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-        <button type="button" data-bs-target="#valCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <?php
+        $slider_query = "SELECT * FROM slider ORDER BY id ASC";
+        $slider_result = mysqli_query($conn, $slider_query);
+        $indicator_count = mysqli_num_rows($slider_result);
+        for ($i = 0; $i < $indicator_count; $i++) {
+            echo '<button type="button" data-bs-target="#valCarousel" data-bs-slide-to="' . $i . '"';
+            if ($i == 0) {
+                echo ' class="active"';
+            }
+            echo ' aria-label="Slide ' . ($i + 1) . '"></button>';
+        }
+        ?>
     </div>
     <!-- carousel indicators ends -->
     <!-- carousel images and text starts -->
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="image/slider-img1.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Some representative placeholder content for the first slide.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image/slider-img2.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Second slide label</h5>
-                <p>Some representative placeholder content for the second slide.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image/slider-img3.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Third slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image/slider-img4.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Fourth slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image/slider-img6.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Fifth slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="image/book-image.png" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>Sixth slide label</h5>
-                <p>Some representative placeholder content for the third slide.</p>
-            </div>
-        </div>
+    <div class="carousel-inner ">
+        <?php
+        $index = 0;
+        while ($row = mysqli_fetch_assoc($slider_result)) {
+            echo '<div class="carousel-item';
+            if ($index == 0) {
+                echo ' active';
+            }
+            echo '">';
+            echo '<img src="' . $row['image'] . '" class="d-block w-100" alt="...">';
+            echo '<div class="carousel-caption d-none d-md-block">';
+            echo '<h5>' . $row['header'] . '</h5>';
+            echo '<p>' . $row['paragraph'] . '</p>';
+            echo '</div></div>';
+            $index++;
+        }
+        mysqli_free_result($slider_result);
+        ?>
     </div>
     <!-- carousel images and text ends -->
     <!-- carousel navigation button starts-->

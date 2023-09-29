@@ -327,41 +327,78 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Edit Slider</h5>
+              <h5 class="card-title">FORM FOR SLIDER</h5>
 
               <!-- Slider Labels Form -->
-              <form action="landingpage.php" class="row g-3">
+              <form action="sliderproccess.php" method="post" enctype="multipart/form-data" class="row g-3">
+                <?php
+                // Check if the insert_success message is set in the session
+                if (isset($_SESSION["insert_success"])) {
+                  echo $_SESSION["insert_success"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["insert_success"]);
+                }
+
+                // Check if the required_field message is set in the session
+                if (isset($_SESSION["required_field"])) {
+                  echo $_SESSION["required_field"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["required_field"]);
+                }
+
+                // Check if the insert_fail message is set in the session
+                if (isset($_SESSION["insert_fail"])) {
+                  echo $_SESSION["insert_fail"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["insert_fail"]);
+                }
+
+                // Check if the proccess_terminate message is set in the session
+                if (isset($_SESSION["proccess_terminate"])) {
+                  echo $_SESSION["proccess_terminate"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["proccess_terminate"]);
+                }
+
+                // Check if the proccess_fail message is set in the session
+                if (isset($_SESSION["proccess_fail"])) {
+                  echo $_SESSION["proccess_fail"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["proccess_fail"]);
+                }
+                ?>
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="file" class="form-control" id="floatingName" placeholder="Upload Image">
+                    <input type="file" class="form-control" name="image" id="floatingName" placeholder="Upload Image"
+                      accept="image/*">
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
+                    <textarea class="form-control" name="header" placeholder="Address" id="floatingTextarea"
                       style="height: 50px;"></textarea>
                     <label for="floatingTextarea">Slide Label</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
+                    <textarea class="form-control" name="paragraph" placeholder="Address" id="floatingTextarea"
                       style="height: 50px;"></textarea>
                     <label for="floatingTextarea">placeholder text</label>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Upload</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
               </form><!-- End slider Form -->
 
             </div>
-          </div>
+          </div><!-- form for slider hompage ends -->
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Floating labels Form</h5>
+              <h5 class="card-title">FORM FOR CARD BESIDE SLIDER</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
@@ -415,17 +452,17 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Upload</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
               </form><!-- End floating Labels Form -->
 
             </div>
-          </div>
+          </div><!-- form for about us homepage ends -->
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Floating labels Form</h5>
+              <h5 class="card-title">FORM FOR ABOUT US HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
@@ -493,7 +530,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Floating labels Form</h5>
+              <h5 class="card-title">FORM FOR OUR PROGRAM HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
@@ -557,7 +594,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Floating labels Form</h5>
+              <h5 class="card-title">FORM FOR SUCCESS STORIES HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
@@ -621,7 +658,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Floating labels Form</h5>
+              <h5 class="card-title">FORM FOR BOOK DOWNLOAD HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
               <form class="row g-3">
