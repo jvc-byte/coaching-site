@@ -472,29 +472,65 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
               <h5 class="card-title">ABOUT US HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
-              <form class="row g-3">
+              <form action="about_us_proccess.php" method="post" enctype="multipart/form-data" class="row g-3">
+              <?php
+                // Check if the nothing message is set in the session
+                if (isset($_SESSION["nothing"])) {
+                  echo $_SESSION["nothing"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["nothing"]);
+                }
+
+                // Check if the correct message is set in the session
+                if (isset($_SESSION["correct"])) {
+                  echo $_SESSION["correct"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["correct"]);
+                }
+
+                // Check if the wrong message is set in the session
+                if (isset($_SESSION["wrong"])) {
+                  echo $_SESSION["wrong"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["wrong"]);
+                }
+
+                // Check if the error message is set in the session
+                if (isset($_SESSION["error"])) {
+                  echo $_SESSION["error"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["error"]);
+                }
+
+                // Check if the terminate message is set in the session
+                if (isset($_SESSION["terminate"])) {
+                  echo $_SESSION["terminate"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["terminate"]);
+                }
+                ?>
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="file" class="form-control" id="floatingName" placeholder="Your Name">
-                    <label for="floatingName">Your Name</label>
+                    <input type="file" class="form-control" id="floatingName" name="image3" placeholder="image">
+                    <label for="floatingName">Image</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
+                    <textarea class="form-control" placeholder="heading" name="heading" id="floatingTextarea"
                       style="height: 50px;"></textarea>
-                    <label for="floatingTextarea">Address</label>
+                    <label for="floatingTextarea">Heading</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
+                    <textarea class="form-control" placeholder="about" name="about" id="floatingTextarea"
                       style="height: 50px;"></textarea>
-                    <label for="floatingTextarea">Address</label>
+                    <label for="floatingTextarea">About Info</label>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Upload</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
               </form><!-- End floating Labels Form -->
@@ -518,47 +554,18 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     <label for="floatingName">Your Name</label>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-12">
                   <div class="form-floating">
-                    <input type="email" class="form-control" id="floatingEmail" placeholder="Your Email">
-                    <label for="floatingEmail">Your Email</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
+                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
+                      style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">Address</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
                     <textarea class="form-control" placeholder="Address" id="floatingTextarea"
-                      style="height: 100px;"></textarea>
+                      style="height: 50px;"></textarea>
                     <label for="floatingTextarea">Address</label>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="col-md-12">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="floatingCity" placeholder="City">
-                      <label for="floatingCity">City</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="State">
-                      <option selected>New York</option>
-                      <option value="1">Oregon</option>
-                      <option value="2">DC</option>
-                    </select>
-                    <label for="floatingSelect">State</label>
-                  </div>
-                </div>
-                <div class="col-md-2">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingZip" placeholder="Zip">
-                    <label for="floatingZip">Zip</label>
                   </div>
                 </div>
                 <div class="text-center">
