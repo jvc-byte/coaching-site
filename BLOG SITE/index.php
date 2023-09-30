@@ -241,54 +241,6 @@ include "include/database_connection.php";
             </div>
         </article>
         <!-- book sales advert ends -->
-
-        <!-- Modal for book advert starts -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-            aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content BookModal">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Downlod the E-book now</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="card mb-3 border-0 BookModalCard">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="image/book image 2.png" class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title" id="ModalBookTitle">Book title</h5>
-                                        <p class="card-text">Book description.This content is a little bit longer.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h6 class="card-title">Book summary or overview</h6>
-                        <p>Omnis, sint earum? Alias optio quae perspiciatis laboriosam voluptatem vel ipsam rerum modi
-                            quaerat
-                            asperiores dolorum dolor nam eveniet minima facere, repellat, cumque quam consequatur
-                            reiciendis
-                            doloribus culpa! Fuga, exercitationem.
-                            Dolorum dolorem itaque, enim dicta quidem reprehenderit possimus adipisci quas, modi
-                            sapiente
-                            consequatur fugit voluptate vitae ratione ipsa voluptas aliquid, distinctio similique
-                            voluptates
-                            corrupti unde? Ducimus, non! Praesentium, facere ea?
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary BookModalBtn"
-                            data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary BookModalBtn BookModalBtnDnld"><a
-                                class="BookModalBtn" href="image/book image 2.png" DOWNLOAD>Download</a></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal for book advert ends -->
     </main>
     <!-- home page ends -->
 
