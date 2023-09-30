@@ -473,7 +473,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
               <!-- Floating Labels Form -->
               <form action="about_us_proccess.php" method="post" enctype="multipart/form-data" class="row g-3">
-              <?php
+                <?php
                 // Check if the nothing message is set in the session
                 if (isset($_SESSION["nothing"])) {
                   echo $_SESSION["nothing"];
@@ -547,29 +547,97 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
               <h5 class="card-title">OUR PROGRAM HOMEPAGE</h5>
 
               <!-- Floating Labels Form -->
-              <form class="row g-3">
+              <form action="program_proccess.php" method="post" enctype="multipart/form-data" class="row g-3">
+                <?php
+                // Check if the empty message is set in the session
+                if (isset($_SESSION["empty"])) {
+                  echo $_SESSION["empty"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["empty"]);
+                }
+
+                // Check if the ok message is set in the session
+                if (isset($_SESSION["ok"])) {
+                  echo $_SESSION["ok"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["ok"]);
+                }
+
+                // Check if the not_ok message is set in the session
+                if (isset($_SESSION["not_ok"])) {
+                  echo $_SESSION["not_ok"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["not_ok"]);
+                }
+
+                // Check if the bad message is set in the session
+                if (isset($_SESSION["bad"])) {
+                  echo $_SESSION["bad"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["bad"]);
+                }
+
+                // Check if the terminated message is set in the session
+                if (isset($_SESSION["terminated"])) {
+                  echo $_SESSION["terminated"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["terminated"]);
+                }
+                ?>
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingName" placeholder="Your Name">
-                    <label for="floatingName">Your Name</label>
+                    <input type="file" class="form-control" id="floatingName" name="program_image" placeholder="Image"
+                      accept="image/*">
+                    <label for="floatingName">Image</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
-                      style="height: 50px;"></textarea>
-                    <label for="floatingTextarea">Address</label>
+                    <textarea class="form-control" placeholder="program title" name="program_title"
+                      id="floatingTextarea" style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">Program title</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Address" id="floatingTextarea"
+                    <textarea class="form-control" placeholder="program info" name="program_info" id="floatingTextarea"
                       style="height: 50px;"></textarea>
-                    <label for="floatingTextarea">Address</label>
+                    <label for="floatingTextarea">program info</label>
+                  </div>
+                </div>
+
+                <h5 class="card-title mx-3 mb-0 pb-0"> Modal contents</h5>
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder=" coaching content" name="coaching_content"
+                      id="floatingTextarea" style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">coaching content</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="level" name="level" id="floatingTextarea"
+                      style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">level</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="dates" name="dates" id="floatingTextarea"
+                      style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">dates</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="fees" name="fees" id="floatingTextarea"
+                      style="height: 50px;"></textarea>
+                    <label for="floatingTextarea">fees</label>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Upload to programs</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
               </form><!-- End floating Labels Form -->
