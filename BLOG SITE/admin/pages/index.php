@@ -138,90 +138,33 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
           </ul><!-- End Notification Dropdown Items -->
         </li><!-- End Notification Nav -->
 
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i> <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            <li class="dropdown-header">
-              You have 3 new messages
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>4 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="dropdown-footer">
-              <a href="#">Show all messages</a>
-            </li>
-
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav -->
-
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $row["first_name"]; ?></span>
+            <img src="<?php echo $row["profile_picture"]; ?>" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">
+              <?php echo $row["first_name"]; ?>
+            </span>
           </a><!-- End Profile Image Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
 
             <li class="dropdown-header">
-              <h6><?php echo $row["first_name"]; echo " "; echo $row["last_name"]; ?></h6>
-              <span><?php echo $row["email"] ?></span>
+              <h6>
+                <?php echo $row["first_name"];
+                echo " ";
+                echo $row["last_name"]; ?>
+              </h6>
+              <span>
+                <?php echo $row["email"] ?>
+              </span>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.php">
+              <a class="dropdown-item d-flex align-items-center" href="profile.php">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -231,7 +174,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.php">
+              <a class="dropdown-item d-flex align-items-center" href="profile.php">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -280,7 +223,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.php">
+        <a class="nav-link collapsed" href="profile.php">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
@@ -294,11 +237,11 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.php">
+        <a class="nav-link collapsed" href="users_dashboard.php">
           <i class="bi bi-envelope"></i>
-          <span>Contact</span>
+          <span>Users Dashboard</span>
         </a>
-      </li><!-- End Contact Page Nav -->
+      </li><!-- End Users Dashboard Page Nav -->
     </ul><!-- End sidebar navs -->
   </aside><!-- End Sidebar-->
 
@@ -322,132 +265,281 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         <div class="col-lg-8">
           <div class="row">
 
-            <!-- meet your mentor -->
-            <div class="col-12">
-              <div class="card">
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card sales-card">
 
-                <div class="card-body">
-                  <h5 class="card-title">Meet Your Mentor</h5>
-                  <div class="row">
-                    <div class="col-2">
-                      <img src="../assets/img/profile-img.jpg" class="img-fluid rounded" alt="...">
-                    </div>
-                    <div class="col">
-                      <span class="card-title fs-6">Coach Albert</span>
-                      <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quos
-                        perspiciatis reprehenderit molestiae nulla provident iure culpa dolorum ipsa, qui sit soluta
-                        cupiditate distinctio sed tempore ducimus, voluptatum, esse ratione.
-                      </p>
-                    </div>
-                  </div>
-                  <div>
-                    <span class="card-title fs-6">Guide</span>
-                    <ul>
-                      <li>Your dedicated mentor will reach out to you within 48 hours of registration.</li>
-                      <li>Schedule an introductory meeting to discuss your business goals and challenges</li>
-                    </ul>
-                  </div>
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
                 </div>
-              </div>
-            </div><!-- End meet your mentor -->
-
-            <!-- Business Analysis -->
-            <div class="col-12">
-              <div class="card">
 
                 <div class="card-body">
-                  <h5 class="card-title">Business Analysis</h5>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quos
-                        perspiciatis reprehenderit molestiae nulla provident iure culpa dolorum ipsa, qui sit soluta
-                        cupiditate distinctio sed tempore ducimus, voluptatum, esse ratione.
-                      </p>
-                      <span class="card-title fs-6">Guide</span>
-                      <ul>
-                        <li>Work closely with your mentor to analyze your current business situation.</li>
-                        <li>Identify areas for improvement and set specific growth objectives.</li>
-                      </ul>
+                  <h5 class="card-title">Sales <span>| Today</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-cart"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>145</h6>
+                      <span class="text-success small pt-1 fw-bold">12%</span> <span
+                        class="text-muted small pt-2 ps-1">increase</span>
+
                     </div>
                   </div>
                 </div>
-              </div>
-            </div><!-- End Business Analysis -->
 
-            <!-- Strategy Development -->
-            <div class="col-12">
-              <div class="card">
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Revenue Card -->
+            <div class="col-xxl-4 col-md-6">
+              <div class="card info-card revenue-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Strategy Development</h5>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quos
-                        perspiciatis reprehenderit molestiae nulla provident iure culpa dolorum ipsa, qui sit soluta
-                        cupiditate distinctio sed tempore ducimus, voluptatum, esse ratione.
-                      </p>
-                      <span class="card-title fs-6">Guide</span>
-                      <ul>
-                        <li>Collaborate with your mentor to create a customized business growth strategy.</li>
-                        <li>Implement actionable steps and set measurable goals.</li>
-                      </ul>
+                  <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-currency-dollar"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>$3,264</h6>
+                      <span class="text-success small pt-1 fw-bold">8%</span> <span
+                        class="text-muted small pt-2 ps-1">increase</span>
+
                     </div>
                   </div>
                 </div>
-              </div>
-            </div><!-- End Strategy Development -->
 
-            <!-- Regular Check-Ins -->
+              </div>
+            </div><!-- End Revenue Card -->
+
+            <!-- students Card -->
+            <div class="col-xxl-4 col-xl-12">
+
+              <div class="card info-card customers-card">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">students <span>| This Year</span></h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class="bi bi-people"></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6>1244</h6>
+                      <span class="text-danger small pt-1 fw-bold">12%</span> <span
+                        class="text-muted small pt-2 ps-1">decrease</span>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div><!-- End students Card -->
+
+            <!-- Reports -->
             <div class="col-12">
               <div class="card">
 
-                <div class="card-body">
-                  <h5 class="card-title">Regular Check-Ins</h5>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quos
-                        perspiciatis reprehenderit molestiae nulla provident iure culpa dolorum ipsa, qui sit soluta
-                        cupiditate distinctio sed tempore ducimus, voluptatum, esse ratione.
-                      </p>
-                      <span class="card-title fs-6">Guide</span>
-                      <ul>
-                        <li>Schedule regular check-in meetings with your mentor to track progress.</li>
-                        <li>Adjust your strategy as needed to overcome challenges.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Regular Check-Ins -->
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
 
-            <!-- Networking and Resources -->
-            <div class="col-12">
-              <div class="card">
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
 
                 <div class="card-body">
-                  <h5 class="card-title">Networking and Resources</h5>
-                  <div class="row">
-                    <div class="col">
-                      <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quos
-                        perspiciatis reprehenderit molestiae nulla provident iure culpa dolorum ipsa, qui sit soluta
-                        cupiditate distinctio sed tempore ducimus, voluptatum, esse ratione.
-                      </p>
-                      <span class="card-title fs-6">Guide</span>
-                      <ul>
-                        <li>Utilize our network of experts and resources to enhance your business.</li>
-                        <li>Attend workshops, webinars, and networking events.</li>
-                      </ul>
-                    </div>
-                  </div>
+                  <h5 class="card-title">Reports <span>/Today</span></h5>
+
+                  <!-- Line Chart -->
+                  <div id="reportsChart"></div>
+
+                  <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                      new ApexCharts(document.querySelector("#reportsChart"), {
+                        series: [{
+                          name: 'Sales',
+                          data: [31, 40, 28, 51, 42, 82, 56],
+                        }, {
+                          name: 'Revenue',
+                          data: [11, 32, 45, 32, 34, 52, 41]
+                        }, {
+                          name: 'students',
+                          data: [15, 11, 32, 18, 9, 24, 11]
+                        }],
+                        chart: {
+                          height: 350,
+                          type: 'area',
+                          toolbar: {
+                            show: false
+                          },
+                        },
+                        markers: {
+                          size: 4
+                        },
+                        colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                        fill: {
+                          type: "gradient",
+                          gradient: {
+                            shadeIntensity: 1,
+                            opacityFrom: 0.3,
+                            opacityTo: 0.4,
+                            stops: [0, 90, 100]
+                          }
+                        },
+                        dataLabels: {
+                          enabled: false
+                        },
+                        stroke: {
+                          curve: 'smooth',
+                          width: 2
+                        },
+                        xaxis: {
+                          type: 'datetime',
+                          categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                        },
+                        tooltip: {
+                          x: {
+                            format: 'dd/MM/yy HH:mm'
+                          },
+                        }
+                      }).render();
+                    });
+                  </script>
+                  <!-- End Line Chart -->
+
                 </div>
+
               </div>
-            </div><!-- End Networking and Resources -->
+            </div><!-- End Reports -->
 
           </div>
         </div><!-- End Left side columns -->
 
         <!-- Right side columns -->
         <div class="col-lg-4">
+
+          <!-- Website Traffic -->
+          <div class="card">
+            <div class="filter">
+              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                <li class="dropdown-header text-start">
+                  <h6>Filter</h6>
+                </li>
+
+                <li><a class="dropdown-item" href="#">Today</a></li>
+                <li><a class="dropdown-item" href="#">This Month</a></li>
+                <li><a class="dropdown-item" href="#">This Year</a></li>
+              </ul>
+            </div>
+
+            <div class="card-body pb-0">
+              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
+
+              <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
+
+              <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  echarts.init(document.querySelector("#trafficChart")).setOption({
+                    tooltip: {
+                      trigger: 'item'
+                    },
+                    legend: {
+                      top: '5%',
+                      left: 'center'
+                    },
+                    series: [{
+                      name: 'Access From',
+                      type: 'pie',
+                      radius: ['40%', '70%'],
+                      avoidLabelOverlap: false,
+                      label: {
+                        show: false,
+                        position: 'center'
+                      },
+                      emphasis: {
+                        label: {
+                          show: true,
+                          fontSize: '18',
+                          fontWeight: 'bold'
+                        }
+                      },
+                      labelLine: {
+                        show: false
+                      },
+                      data: [{
+                        value: 1048,
+                        name: 'Search Engine'
+                      },
+                      {
+                        value: 735,
+                        name: 'Direct'
+                      },
+                      {
+                        value: 580,
+                        name: 'Email'
+                      },
+                      {
+                        value: 484,
+                        name: 'Union Ads'
+                      },
+                      {
+                        value: 300,
+                        name: 'Video Ads'
+                      }
+                      ]
+                    }]
+                  });
+                });
+              </script>
+
+            </div>
+          </div><!-- End Website Traffic -->
 
           <!-- Recent Activity -->
           <div class="card">
@@ -522,60 +614,6 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             </div>
           </div><!-- End Recent Activity -->
 
-          <!-- News & Updates Traffic -->
-          <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
-              <div class="news">
-                <div class="post-item clearfix">
-                  <img src="../assets/img/news-1.jpg" alt="">
-                  <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="../assets/img/news-2.jpg" alt="">
-                  <h4><a href="#">Quidem autem et impedit</a></h4>
-                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="../assets/img/news-3.jpg" alt="">
-                  <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="../assets/img/news-4.jpg" alt="">
-                  <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                  <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="../assets/img/news-5.jpg" alt="">
-                  <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
-                </div>
-
-              </div><!-- End sidebar recent posts-->
-
-            </div>
-          </div><!-- End News & Updates -->
-
         </div><!-- End Right side columns -->
 
       </div>
@@ -599,8 +637,8 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
 
   <!-- Vendor JS Files -->
-  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="../assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../assets/vendor/apexchart/apexcharts.min.js"></script>
+  <script src="../assets/vendor/echart/echarts.min.js"></script>
   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>

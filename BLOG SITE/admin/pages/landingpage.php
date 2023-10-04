@@ -136,75 +136,10 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
           </ul><!-- End Notification Dropdown Items -->
         </li><!-- End Notification Nav -->
 
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i> <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            <li class="dropdown-header">
-              You have 3 new messages
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>4 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="../assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="dropdown-footer">
-              <a href="#">Show all messages</a>
-            </li>
-
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav -->
-
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="<?php echo $row["profile_picture"]; ?>" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">
               <?php echo $row["first_name"]; ?>
             </span>
@@ -227,7 +162,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.php">
+              <a class="dropdown-item d-flex align-items-center" href="profile.php">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -237,7 +172,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.php">
+              <a class="dropdown-item d-flex align-items-center" href="profile.php">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -286,7 +221,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.php">
+        <a class="nav-link collapsed" href="profile.php">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
@@ -294,17 +229,17 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
       <li class="nav-item">
         <a class="nav-link " href="landingpage.php">
-          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-layout-text-sidebar-reverse"></i>
           <span>Landing Page</span>
         </a>
       </li><!-- End Landing Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.php">
+        <a class="nav-link collapsed" href="users_dashboard.php">
           <i class="bi bi-envelope"></i>
-          <span>Contact</span>
+          <span>Users Dashboard</span>
         </a>
-      </li><!-- End Contact Page Nav -->
+      </li><!-- End Users Dashboard Page Nav -->
     </ul><!-- End sidebar navs -->
   </aside><!-- End Sidebar-->
 
@@ -647,7 +582,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Update book advert</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
               </form><!-- End floating Labels Form -->
@@ -849,10 +784,46 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
             <div class="card-body">
               <h5 class="card-title">BLOG PAGE</h5>
               <!-- Floating Labels Form -->
-              <form class="row g-3">
+              <form action="blog_page_proccess.php" method="post" enctype="multipart/form-data" class="row g-3">
+              <?php
+                // Check if the no_field message is set in the session
+                if (isset($_SESSION["no_field"])) {
+                  echo $_SESSION["no_field"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["no_field"]);
+                }
+
+                // Check if the yes_success message is set in the session
+                if (isset($_SESSION["yes_success"])) {
+                  echo $_SESSION["yes_success"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["yes_success"]);
+                }
+
+                // Check if the yes_fail message is set in the session
+                if (isset($_SESSION["yes_fail"])) {
+                  echo $_SESSION["yes_fail"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["yes_fail"]);
+                }
+
+                // Check if the no_proccess message is set in the session
+                if (isset($_SESSION["no_proccess"])) {
+                  echo $_SESSION["no_proccess"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["no_proccess"]);
+                }
+
+                // Check if the yes_terminate message is set in the session
+                if (isset($_SESSION["yes_terminate"])) {
+                  echo $_SESSION["yes_terminate"];
+                  // Unset the session variable to clear the message
+                  unset($_SESSION["yes_terminate"]);
+                }
+                ?>
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="file" class="form-control" name="blog_image" id="blog_image" placeholder="blog image">
+                    <input type="file" class="form-control" name="blog_image" id="blog_image" placeholder="blog image" accept="image/*">
                     <label for="blog_image">Blog Image</label>
                   </div>
                 </div>
@@ -871,7 +842,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Update blog page</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
               </form><!-- End floating Labels Form -->

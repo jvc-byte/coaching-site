@@ -9,9 +9,9 @@
 
                 <h5>Programs</h5>
                 <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="/">Val Coach Signature Program</a></li>
-                    <li class="mb-2"><a href="#">Team+ Programs</a></li>
-                    <li class="mb-2"><a href="#">The Unique EDGE Program For You</a></li>
+                    <li class="mb-2"><a href="/">The Epicurean Program - Classic</a></li>
+                    <li class="mb-2"><a href="#">The Odyssey Program - P2P</a></li>
+                    <li class="mb-2"><a href="#">The Astral Program - Virtual</a></li>
                     <li class="mb-2">Designed and built with all the love in the world by <a href="#">valentine</a>
                     </li>
                     <li class="mb-2">©2023. All rights reserved.</li>

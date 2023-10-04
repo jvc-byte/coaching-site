@@ -62,8 +62,8 @@
                 }
             } elseif ($row["user_type"] == "admin") {
                 $_SESSION["admin"] = $row["user_type"];
+                $_SESSION["id"] = $row["id"];
                 header("location: ../admin/pages/index.php");
-                die();
             } else {
                 echo "<div class='alert alert-danger'>Incorrect email</div>";
             }

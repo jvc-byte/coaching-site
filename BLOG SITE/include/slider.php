@@ -26,7 +26,7 @@
                 echo ' active';
             }
             echo '">';
-            echo '<img src="' . $row['image'] . '" class="d-block w-100" alt="...">';
+            echo '<img src="' . $row['image'] . '" class="d-block w-100" alt="an image">';
             echo '<div class="carousel-caption d-none d-md-block">';
             echo '<h5>' . $row['header'] . '</h5>';
             echo '<p>' . $row['paragraph'] . '</p>';
