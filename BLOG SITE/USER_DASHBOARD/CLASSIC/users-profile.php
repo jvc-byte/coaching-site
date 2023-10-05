@@ -208,7 +208,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="<?php echo $row["profile_picture"]; ?>" alt="Profile" class="rounded-circle">
+            <img src="<?php echo (empty($row["profile_picture"]) ? '../../image/profile_icon.jpg' : $row["profile_picture"]); ?>" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">
               <?php echo $row["first_name"] ?>
             </span>
@@ -333,7 +333,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="<?php echo $row["profile_picture"]; ?>" alt="Profile" class="rounded-circle">
+              <img src="<?php echo (empty($row["profile_picture"]) ? '../../image/profile_icon.jpg' : $row["profile_picture"]); ?>" alt="Profile" class="rounded-circle">
               <h2>
                 <?php echo $row["first_name"];
                 echo " ";
@@ -455,7 +455,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img id="profileImagePreview" src="<?php echo $row["profile_picture"]; ?>" alt="Profile">
+                        <img id="profileImagePreview" src="<?php echo (empty($row["profile_picture"]) ? '../../image/profile_icon.jpg' : $row["profile_picture"]); ?>" alt="Profile" class="rounded-circle">
                         <div class="pt-2">
 
                           <label for="profile_picture"><i class="btn btn-primary btn-sm bi bi-upload"></i></label>

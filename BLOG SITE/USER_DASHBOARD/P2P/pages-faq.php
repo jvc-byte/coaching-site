@@ -208,7 +208,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="<?php echo $row["profile_picture"]; ?>" alt="Profile" class="rounded-circle">
+            <img src="<?php echo (empty($row["profile_picture"]) ? '../../image/profile_icon.jpg' : $row["profile_picture"]); ?>" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $row["first_name"]; ?></span>
           </a><!-- End Profile Image Icon -->
 
