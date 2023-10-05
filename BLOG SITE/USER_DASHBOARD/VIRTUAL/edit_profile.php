@@ -15,13 +15,13 @@ if (isset($_POST["update_profile"])) {
     if ($_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {
         $tempName = $_FILES['profile_picture']['tmp_name'];
         $imageName = uniqid() . '_' . $_FILES['profile_picture']['name']; // Unique image name to avoid conflicts
-        $uploadPath = '../profile_image/' . $imageName;
-        $imageStore = '../profile_image/' . $imageName; // Path to store the image
+        $uploadPath = '../profile_images/' . $imageName;
+        $imageStore = '../profile_images/' . $imageName; // Path to store the image
         move_uploaded_file($tempName, $imageStore);
         $imagepath = $uploadPath;
     } else {
         $imagepath = "";
-        header("location: profile.php?errorMsg=No image uploaded");
+        header("location: users-profile.php?errorMsg=No image uploaded");
     }
 
     // Construct the update query based on non-empty fields
@@ -79,18 +79,18 @@ if (isset($_POST["update_profile"])) {
 
         // Execute the statement
         if (mysqli_stmt_execute($stmt)) {
-            header("location: profile.php?successMsg=Details updated successfully!");
+            header("location: users-profile.php?successMsg=Details updated successfully!");
         } else {
-            header("location: profile.php?errorMsg=Failed to update details. Please try again later.");
+            header("location: users-profile.php?errorMsg=Failed to update details. Please try again later.");
         }
 
         // Close the statement
         mysqli_stmt_close($stmt);
     } else {
-        header("location: profile.php?errorMsg=No fields provided for update.");
+        header("location: users-profile.php?errorMsg=No fields provided for update.");
     }
 } else {
-    header("location: profile.php?errorMsg=Invalid request");
+    header("location: users-profile.php?errorMsg=Invalid request");
 }
 ?>
 

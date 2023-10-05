@@ -10,16 +10,16 @@ if (isset($_POST["reset"])) {
 
     // Validate inputs
     if (empty($password)) {
-        header("location: profile.php?error=Please enter your old password.");
+        header("location: users-profile.php?error=Please enter your old password.");
         exit(); // Exit to prevent further processing
     } elseif (empty($newpassword)) {
-        header("location: profile.php?error=Please enter your old password.");
+        header("location: users-profile.php?error=Please enter your old password.");
         exit(); // Exit to prevent further processing
     } elseif (strlen($newpassword) < 8) {
-        header("location: profile.php?error=Password must be at least 8 characters long.");
+        header("location: users-profile.php?error=Password must be at least 8 characters long.");
         exit(); // Exit to prevent further processing
     } elseif ($newpassword !== $renewpassword) {
-        header("location: profile.php?error=New password and confirm password do not match!");
+        header("location: users-profile.php?error=New password and confirm password do not match!");
         exit(); // Exit to prevent further processing
     }
 
@@ -43,14 +43,14 @@ if (isset($_POST["reset"])) {
         mysqli_stmt_bind_param($stmt, "si", $passwordHash, $id);
         mysqli_stmt_execute($stmt);
 
-        header("location: profile.php?success=Password changed successfully!");
+        header("location: users-profile.php?success=Password changed successfully!");
         exit(); // Exit after successful password change
     } else {
-        header("location: profile.php?error=Incorrect password. Please input your old password");
+        header("location: users-profile.php?error=Incorrect password. Please input your old password");
         exit(); // Exit to prevent further processing
     }
 } else {
-    header("location: profile.php?error=User not found");
+    header("location: users-profile.php?error=User not found");
     exit(); // Exit to prevent further processing
 }
 ?>

@@ -2,11 +2,14 @@
 
 session_start();
 
-include "../../include/database_connection.php";
+require_once "database_connection.php";
 
-$admin = $_SESSION["admin"];
-$id = $_SESSION["id"];
-$user = "SELECT * From user WHERE user_type = '$admin'";
+if (!isset($_SESSION["admin_id"])) {
+  header("location: ../../index.php");
+}
+
+$user_id = $_SESSION["admin_id"];
+$user = "SELECT * From user WHERE id = '$user_id'";
 $result = mysqli_query($conn, $user);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
@@ -372,11 +375,19 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
                   <!-- Profile Edit Form -->
                   <form action="edit_profile_proccess.php" method="post" enctype="multipart/form-data">
-                    <?php if (isset($_GET["imgError"])) { ?>
+
+                    <?php if (isset($_GET["errorMsg"])) { ?>
                       <div class="text-center alert alert-danger">
-                        <?php echo $_GET["imgError"]; ?>
+                        <?php echo $_GET["errorMsg"]; ?>
                       </div>
                     <?php } ?>
+
+                    <?php if (isset($_GET["successMsg"])) { ?>
+                      <div class="text-center alert alert-success">
+                        <?php echo $_GET["successMsg"]; ?>
+                      </div>
+                    <?php } ?>
+
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">

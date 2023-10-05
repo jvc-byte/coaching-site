@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "../../include/database_connection.php";
+require_once "database_connection.php";
 
 // Check if the form was submitted
 if (isset($_POST["submit"])) {

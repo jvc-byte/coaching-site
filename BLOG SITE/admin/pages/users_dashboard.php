@@ -2,10 +2,14 @@
 
 session_start();
 
-include "../../include/database_connection.php";
+require_once "database_connection.php";
 
-$admin = $_SESSION["admin"];
-$user = "SELECT * From user WHERE user_type = '$admin'";
+if (!isset($_SESSION["admin_id"])) {
+  header("location: ../../index.php");
+}
+
+$user_id = $_SESSION["admin_id"];
+$user = "SELECT * From user WHERE id = '$user_id'";
 $result = mysqli_query($conn, $user);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 

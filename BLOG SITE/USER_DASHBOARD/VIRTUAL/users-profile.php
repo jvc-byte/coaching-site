@@ -1,10 +1,13 @@
 <?php
 
 session_start();
+require_once "database_connection.php";
 
-include "../../include/database_connection.php";
+if (!isset($_SESSION["virtual_id"])) {
+  header("location: ../../index.php");
+}
 
-$user_id = $_SESSION["id"];
+$user_id = $_SESSION["virtual_id"];
 $user = "SELECT * From user WHERE id = '$user_id'";
 $result = mysqli_query($conn, $user);
 $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -205,15 +208,23 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2"><?php echo $row["first_name"] ?></span>
+            <img src="<?php echo $row["profile_picture"]; ?>" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">
+              <?php echo $row["first_name"] ?>
+            </span>
           </a><!-- End Profile Image Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
 
             <li class="dropdown-header">
-              <h6><?php echo $row["first_name"]; echo " "; echo $row["last_name"]; ?></h6>
-              <span><?php echo $row["email"]; ?></span>
+              <h6>
+                <?php echo $row["first_name"];
+                echo " ";
+                echo $row["last_name"]; ?>
+              </h6>
+              <span>
+                <?php echo $row["email"]; ?>
+              </span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -322,9 +333,15 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
           <div class="card">
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-              <img src="../assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2><?php echo $row["first_name"]; echo " "; echo $row["last_name"]; ?></h2>
-              <h3><?php echo $row["email"]; ?></h3>
+              <img src="<?php echo $row["profile_picture"]; ?>" alt="Profile" class="rounded-circle">
+              <h2>
+                <?php echo $row["first_name"];
+                echo " ";
+                echo $row["last_name"]; ?>
+              </h2>
+              <h3>
+                <?php echo $row["email"]; ?>
+              </h3>
               <div class="social-links mt-2">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -338,7 +355,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
         <div class="col-xl-8">
 
-          <div class="card">  
+          <div class="card">
             <div class="card-body pt-3">
               <!-- Bordered Tabs -->
               <ul class="nav nav-tabs nav-tabs-bordered">
@@ -366,38 +383,54 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                   <h5 class="card-title">About</h5>
-                  <p class="small fst-italic"><?php echo $row["about"]; ?></p>
+                  <p class="small fst-italic">
+                    <?php echo $row["about"]; ?>
+                  </p>
 
                   <h5 class="card-title">Profile Details</h5>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["first_name"]; echo " "; echo $row["last_name"]; ?></div>
+                    <div class="col-lg-9 col-md-8">
+                      <?php echo $row["first_name"];
+                      echo " ";
+                      echo $row["last_name"]; ?>
+                    </div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Industry</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["industry"]; ?></div>
+                    <div class="col-lg-9 col-md-8">
+                      <?php echo $row["industry"]; ?>
+                    </div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Program</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["program"]; ?></div>
+                    <div class="col-lg-9 col-md-8">
+                      <?php echo $row["program"]; ?>
+                    </div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Address</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["address"]; ?></div>
+                    <div class="col-lg-9 col-md-8">
+                      <?php echo $row["address"]; ?>
+                    </div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Phone</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["phone_number"]; ?></div>
+                    <div class="col-lg-9 col-md-8">
+                      <?php echo $row["phone_number"]; ?>
+                    </div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8"><?php echo $row["email"]; ?></div>
+                    <div class="col-lg-9 col-md-8">
+                      <?php echo $row["email"]; ?>
+                    </div>
                   </div>
 
                 </div>
@@ -405,14 +438,29 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  <form>
+                  <form action="edit_profile.php" method="post" enctype="multipart/form-data">
+
+                    <?php if (isset($_GET["errorMsg"])) { ?>
+                      <div class="text-center alert alert-danger">
+                        <?php echo $_GET["errorMsg"]; ?>
+                      </div>
+                    <?php } ?>
+
+                    <?php if (isset($_GET["successMsg"])) { ?>
+                      <div class="text-center alert alert-success">
+                        <?php echo $_GET["successMsg"]; ?>
+                      </div>
+                    <?php } ?>
+
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="../assets/img/profile-img.jpg" alt="Profile">
+                        <img id="profileImagePreview" src="<?php echo $row["profile_picture"]; ?>" alt="Profile">
                         <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i
-                              class="bi bi-upload"></i></a>
+
+                          <label for="profile_picture"><i class="btn btn-primary btn-sm bi bi-upload"></i></label>
+                          <input type="file" id="profile_picture" name="profile_picture" style="display: none;">
+
                           <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i
                               class="bi bi-trash"></i></a>
                         </div>
@@ -420,9 +468,18 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     </div>
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                      <label for="first_name" class="col-md-4 col-lg-3 col-form-label">First Name</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="<?php echo $row["first_name"]; echo " "; echo $row["last_name"]; ?>">
+                        <input name="first_name" type="text" class="form-control" id="first_name"
+                          value="<?php echo $row["first_name"]; ?>">
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="last_name" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="last_name" type="text" class="form-control" id="last_name"
+                          value="<?php echo $row["last_name"]; ?>">
                       </div>
                     </div>
 
@@ -431,21 +488,6 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                       <div class="col-md-8 col-lg-9">
                         <textarea name="about" class="form-control" id="about"
                           style="height: 100px"><?php echo $row["about"]; ?></textarea>
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="company" class="col-md-4 col-lg-3 col-form-label">Industry</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="company" type="text" class="form-control" id="company"
-                          value="<?php echo $row["industry"]; ?>">
-                      </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Program</label>
-                      <div class="col-md-8 col-lg-9">
-                        <input name="job" type="text" class="form-control" id="Job" value="<?php echo $row["program"]; ?>">
                       </div>
                     </div>
 
@@ -460,19 +502,21 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     <div class="row mb-3">
                       <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="phone" type="text" class="form-control" id="Phone" value="<?php echo $row["phone_number"]; ?>">
+                        <input name="phone_number" type="text" class="form-control" id="Phone"
+                          value="<?php echo $row["phone_number"]; ?>">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+                        <input name="email" type="email" class="form-control" id="Email"
+                          value="<?php echo $row["email"]; ?>">
                       </div>
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Save Changes</button>
+                      <button name="update_profile" class="btn btn-primary">Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
 
@@ -521,8 +565,22 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">
+
                   <!-- Change Password Form -->
-                  <form>
+                  <form action="change_password.php" method="post">
+
+
+                    <?php if (isset($_GET["error"])) { ?>
+                      <div class="text-center alert alert-danger">
+                        <?php echo $_GET["error"]; ?>
+                      </div>
+                    <?php } ?>
+
+                    <?php if (isset($_GET["success"])) { ?>
+                      <div class="text-center alert alert-success">
+                        <?php echo $_GET["success"]; ?>
+                      </div>
+                    <?php } ?>
 
                     <div class="row mb-3">
                       <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
@@ -546,7 +604,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Change Password</button>
+                      <button name="reset" class="btn btn-primary">Change Password</button>
                     </div>
                   </form><!-- End Change Password Form -->
 

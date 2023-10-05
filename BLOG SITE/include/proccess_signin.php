@@ -1,7 +1,61 @@
+<?php
+session_start();
+require_once "database_connection.php";
+$errorMsg = [];
+
+
+if (isset($_POST["signin"])) {
+    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $password = mysqli_real_escape_string($conn, $_POST["password"]);
+    $program = mysqli_real_escape_string($conn, $_POST["program"]);
+
+    $email_query = "SELECT * FROM user WHERE email = ?";
+    $stmt = mysqli_prepare($conn, $email_query);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        if (password_verify($password, $row["password"])) {
+            // $_SESSION["id"] = $row["id"];
+
+            if ($row["program"] == "classic") {
+                $_SESSION["classic_id"] = $row["id"];
+                header("Location: ../user_dashboard/classic/classic.php");
+                exit();
+            } elseif ($row["program"] == "p2p") {
+                $_SESSION["p2p_id"] = $row["id"];
+                header("Location: ../user_dashboard/p2p/p2p.php");
+                exit();
+            } elseif ($row["program"] == "virtual") {
+                $_SESSION["virtual_id"] = $row["id"];
+                header("Location: ../user_dashboard/virtual/virtual.php");
+                exit();
+            } elseif ($row["user_type"] == "admin") {
+                $_SESSION["admin_id"] = $row["id"];
+                header("Location: ../admin/pages/index.php");
+                exit();
+            } else {
+                $errorMsg[] = "Incorrect program";
+            }
+        } else {
+            $errorMsg[] = "Incorrect password";
+        }
+    } else {
+        $errorMsg[] = "User not found";
+    }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($conn);
+} else {
+    $errorMsg[] = "Invalid request";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <!-- Head content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="image/logo.jpg" type="image/x-icon">
@@ -13,68 +67,22 @@
 </head>
 
 <body>
-    <?php
-    include "database_connection.php";
-    session_start();
-    if (isset($_POST["signin"])) {
-        $email = $_POST["email"];
-        $password = $_POST["password"];
-        $program = $_POST["program"];
-
-        // query the MYSQL database
-        $email_query = "SELECT * FROM user WHERE email = '$email'";
-        $result = mysqli_query($conn, $email_query);
-        $row_count = mysqli_num_rows($result); // check if the email exists
-    
-        if ($row_count > 0) {
-
-            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-
-            if ($row["program"] == "classic") {
-                $_SESSION["classic_name"] = $row["first_name"];
-
-                if (password_verify($password, $row["password"])) {
-                    $_SESSION["id"] = $row["id"];
-                    header("location: ../user_dashboard/classic/classic.php");
-                    die();
-                } else {
-                    echo "<div class='alert alert-danger'>Incorrect password</div>";
+    <div class="container">
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center g-2">
+                <?php
+                // Display error message if present
+                if (!empty($errorMsg)) {
+                    foreach ($errorMsg as $error) {
+                        echo '<div class="alert alert-danger">' . $error . '</div>';
+                    }
                 }
-            } elseif ($row["program"] == "p2p") {
-                $_SESSION["p2p_name"] = $row["first_name"];
-
-                if (password_verify($password, $row["password"])) {
-                    $_SESSION["id"] = $row["id"];
-                    header("location: ../user_dashboard/p2p/p2p.php");
-                    die();
-                } else {
-                    echo "<div class='alert alert-danger'>Incorrect password</div>";
-                }
-            } elseif ($row["program"] == "virtual") {
-                $_SESSION["virtual_name"] = $row["first_name"];
-
-                if (password_verify($password, $row["password"])) {
-                    $_SESSION["id"] = $row["id"];
-                    header("location: ../user_dashboard/virtual/virtual.php");
-                    die();
-                } else {
-                    echo "<div class='alert alert-danger'>Incorrect password</div>";
-                }
-            } elseif ($row["user_type"] == "admin") {
-                $_SESSION["admin"] = $row["user_type"];
-                $_SESSION["id"] = $row["id"];
-                header("location: ../admin/pages/index.php");
-            } else {
-                echo "<div class='alert alert-danger'>Incorrect email</div>";
-            }
-        }
-
-    } else {
-        echo "<div class='alert alert-danger'>User not found</div>";
-    }
-    ?>
-
-    <a href="../index.php" class="btn btn-outline-primary ms-md-5  customize get-started">Home</a>
+                ?>
+                <h4 class="text-primary mx-2">Try again</h4>
+                <a href="../index.php" class="btn btn-outline-primary">Home</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
