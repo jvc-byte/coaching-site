@@ -3,13 +3,13 @@ session_start();
 require_once "database_connection.php";
 
 if (isset($_POST["update_profile"])) {
-    $id = $_SESSION["id"];
-    $first_name = mysqli_real_escape_string($conn, $_POST["first_name"]);
-    $last_name = mysqli_real_escape_string($conn, $_POST["last_name"]);
-    $about = mysqli_real_escape_string($conn, $_POST["about"]);
-    $address = mysqli_real_escape_string($conn, $_POST["address"]);
-    $phone_number = mysqli_real_escape_string($conn, $_POST["phone_number"]);
-    $email = mysqli_real_escape_string($conn, $_POST["email"]);
+    $id = $_SESSION["classic_id"];
+    $first_name = $_POST["first_name"];
+    $last_name = $_POST["last_name"];
+    $about = $_POST["about"];
+    $address = $_POST["address"];
+    $phone_number = $_POST["phone_number"];
+    $email = $_POST["email"];
 
     // Handle image upload
     if ($_FILES['profile_picture']['error'] === UPLOAD_ERR_OK) {

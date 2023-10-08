@@ -7,6 +7,7 @@
             type="submit">ANNOUNCEMENT</button>
     </div>
 
+    <div class="sliderCard">
     <div class="inspire" id="inspiration">
         <?php
         $slider_card_query = "SELECT * FROM slider_card ORDER BY id DESC LIMIT 4";
@@ -39,6 +40,7 @@
         }
         ?>
     </div>
+    </div>
 
     <div class="card-body socials">
         <a href="#" class="card-link"><i class="fab fa-blogger-b"></i></a>
@@ -46,6 +48,6 @@
         <a href="#" class="card-link"><i class="fa-brands fa-youtube"></i></a>
         <a href="#" class="card-link"><i class="fa-brands fa-instagram"></i></a>
         <a href="#" class="card-link"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#" class="card-link"><i class="fa fa-envelope-O"></i></a>
+        <a href="#" class="card-link"><i class="fa fa-envelope"></i></a>
     </div>
 </div>

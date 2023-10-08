@@ -8,8 +8,8 @@ $imagePath = '';
 // Check if the form was submitted
 if (isset($_POST["submit"])) {
     // Get data from the form
-    $blog_title = mysqli_real_escape_string($conn, $_POST["blog_title"]);
-    $blog_info = mysqli_real_escape_string($conn, $_POST["blog_info"]);
+    $blog_title = $_POST["blog_title"];
+    $blog_info = $_POST["blog_info"];
 
     // Handle blog_image upload
     if ($_FILES['blog_image']['error'] === UPLOAD_ERR_OK) {

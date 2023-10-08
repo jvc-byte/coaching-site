@@ -141,7 +141,7 @@ include "include/database_connection.php";
         <section>
             <!-- carousel and card(anouncement & inspiration) starts -->
             <div class="container">
-                <div class="row h-100">
+                <div class="row">
                     <!-- carousel starts -->
                     <div class="col-md-7">
                         <?php include_once "include/slider.php" ?>
@@ -155,15 +155,6 @@ include "include/database_connection.php";
                 </div>
             </div>
             <!-- carousel and card(anouncement & inspiration) ends -->
-            <!-- learn more or register now starts -->
-            <div class="container text-center" aria-label="learn more or register now">
-                <div class="row">
-                    <a href="#" class="learnReg col-md-3">Learn More <span class="badge"><i
-                                class="fa fa-play-circle-o icon"></i></span></a>
-                    <a href="#" class="learnReg registar col-md-3">Register Now</a>
-                </div>
-            </div>
-            <!-- learn more or register now starts -->
         </section>
         <!-- section for carousel, anouncement, inspiration & learn more/register now ends -->
 

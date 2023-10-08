@@ -28,7 +28,7 @@ p small {
     color: rgb(4, 4, 130);
 }
 
-.modal-body p{
+.modal-body p {
     color: #0202a9;
     text-align: justify;
 }
@@ -254,8 +254,31 @@ body {
     background-color: rgb(245, 249, 255);
 }
 
+.sliderCard {
+    height: 325px;
+    overflow-y: auto;
+    /* scrollbar-width: thin; */
+}
+
+.sliderCard::-webkit-scrollbar {
+    width: 0.3rem; 
+}
+
+.sliderCard::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 76, 255, 0.242);
+    border-radius: 0.2rem;
+}
+
+.sliderCard::-webkit-scrollbar-track{
+    background-color: #ddd;
+}
+
+.sliderCard::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(0, 76, 255, 1)   ;
+}
+
 .carde {
-    border-radius: 2rem;
+    border-radius: 1rem;
     margin: 0 10px 10px 10px;
 }
 
@@ -281,31 +304,16 @@ body {
     color: blue;
 }
 
-.socials .card-link i:nth-child(1) {
-    margin-left: 3rem;
-}
-
 .socials {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-@media (max-width:520px) {
-    .registar {
-        margin-top: 10px;
-    }
-}
-
 @media (max-width:1200px) {
     .socials .card-link i:nth-child(1) {
         margin-left: 0;
     }
-}
-
-.icon {
-    font-size: 30px;
-    color: blue;
 }
 
 .detail,
@@ -317,7 +325,7 @@ body {
 
 .detail,
 .cardLink:hover {
-    background: linear-gradient(to right, rgba(2, 2, 169, 1) 3%, rgba(25, 95, 255, 1), rgba(2, 2, 169, 1) 98%);
+    background: linear-gradient(to right, rgb(2, 2, 169) 3%, rgba(25, 95, 255, 1), rgba(2, 2, 169, 1) 98%);
     border-color: blue;
     color: white;
 }
@@ -357,11 +365,6 @@ body {
     text-align: center;
     line-height: 15rem;
     height: 15rem;
-}
-
-.learnReg {
-    color: rgba(72, 72, 254, 0.7);
-    font-size: xx-large;
 }
 
 .BookModal {

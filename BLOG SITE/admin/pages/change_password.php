@@ -3,6 +3,7 @@ session_start();
 require_once "database_connection.php";
 
 if (isset($_POST["reset"])) {
+    $id = $_SESSION["admin_id"];
     // Get user inputs
     $password = $_POST["password"];
     $newpassword = $_POST["newpassword"];
@@ -27,7 +28,6 @@ if (isset($_POST["reset"])) {
     $passwordHash = password_hash($newpassword, PASSWORD_DEFAULT);
 
     // Retrieve user's current password from the database
-    $id = $_SESSION["id"];
     $select_user_query = "SELECT password FROM user WHERE id = ?";
     $stmt = mysqli_prepare($conn, $select_user_query);
     mysqli_stmt_bind_param($stmt, "i", $id);
