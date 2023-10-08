@@ -85,17 +85,17 @@ if (isset($_POST["submit"])) {
 </head>
 
 <body class="mt-5">
-<div class="container">
+    <div class="container">
+        <?php
+        // Display error message if present
+        if (!empty($errors)) {
+            foreach ($errors as $error) {
+                echo '<div class="alert alert-danger">' . $error . '</div>';
+            }
+        }
+        ?>
         <div class="row">
             <div class="col d-flex justify-content-center align-items-center g-2">
-                <?php
-                // Display error message if present
-                if (!empty($errors)) {
-                    foreach ($errors as $error) {
-                        echo '<div class="alert alert-danger">' . $error . '</div>';
-                    }
-                }
-                ?>
                 <h4 class="text-primary mx-2">Try again</h4>
                 <a href="../index.php" class="btn btn-outline-primary">Home</a>
             </div>
