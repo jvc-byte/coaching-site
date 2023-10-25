@@ -66,13 +66,13 @@ if (isset($_POST["signin"])) {
     <title>.</title>
 </head>
 
-<body>
+<body class="mt-5">
     <div class="container">
         <?php
         // Display error message if present
-        if (!empty($errors)) {
-            foreach ($errors as $error) {
-                echo '<div class="alert alert-danger">' . $error . '</div>';
+        if (!empty($errorMsg)) {
+            foreach ($errorMsg as $error) {
+                echo '<div class="alert alert-danger text-center">' . $error . '</div>';
             }
         }
         ?>

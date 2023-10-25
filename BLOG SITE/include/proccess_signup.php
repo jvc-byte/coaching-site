@@ -90,7 +90,7 @@ if (isset($_POST["submit"])) {
         // Display error message if present
         if (!empty($errors)) {
             foreach ($errors as $error) {
-                echo '<div class="alert alert-danger">' . $error . '</div>';
+                echo '<div class="alert alert-danger text-center">' . $error . '</div>';
             }
         }
         ?>
