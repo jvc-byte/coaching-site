@@ -400,8 +400,7 @@ $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" name="submit" class="btn btn-primary">Update anouncement and
-                    inspiration</button>
+                  <button type="submit" name="submit" class="btn btn-primary">Update Ann. & Insp.</button>
                   <button type="reset" class="btn btn-secondary">Reset</button>
                 </div>
               </form><!-- End CARD BESIDE SLIDER -->
