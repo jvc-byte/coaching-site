@@ -2,7 +2,7 @@
 $hostName = "localhost";
 $dbUser = "root";
 $dbPassword = "";
-$dbName = "blog site";
+$dbName = "coaching_site";
 
 $conn = mysqli_connect($hostName, $dbUser, $dbPassword, $dbName);
 

@@ -67,5 +67,6 @@
                 </ul>
             </div>
         </div>
+        <a href="hashed_password_checker.php" class="btn btn-primary ms-md-5">Free Password Hasher</a>
     </div>
 </footer>
