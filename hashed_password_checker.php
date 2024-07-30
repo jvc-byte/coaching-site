@@ -91,6 +91,27 @@
             font-weight: 700;
             right: -80%;
         }
+        .div_home_btn{
+            margin-top: 50px;
+            text-align: center;
+        }
+        .home_btn{
+            border: 2px solid blue;
+            border-radius: 10px;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 142.857%;
+            color: blue;
+        }
+        .home_btn:hover{
+            border: 2px solid blue;
+            border-radius: 10px;
+            color: white;
+            background-color: blue;
+            padding: 10px;
+        }
     </style>
 </head>
 
@@ -162,6 +183,9 @@
             <span id="copy" onclick="copyToClipboard()">Copy</span><br>
             <input type="submit" name="generate" value="Hash"><br><br>
         </form>
+    </div>
+    <div class="div_home_btn">
+        <a href="index.php" class="home_btn">Back to Home</a>
     </div>
 
     <script>

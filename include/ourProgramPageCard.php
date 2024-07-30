@@ -1,6 +1,6 @@
 <div id="testthisidiot" class="col-md-4 caders coachprogramsbody">
     <div class="card success_card">
-        <img src="image/div.post-image.png" class="card-img-top" alt="...">
+        <img src="admin/pages/success_image/65186a3cbb657_div.post-image (1).png" class="card-img-top" alt="...">
         <div class="card-body">
             <h2 class="card-title">The Epicurean Program - Classic</h2>
         </div>
@@ -21,7 +21,7 @@
 
 <div class="col-md-4 caders coachprogramsbody">
     <div class="card success_card">
-        <img src="image/div.post-image (1).png" class="card-img-top" alt="...">
+        <img src="admin/pages/success_image/65186a3cbb657_div.post-image (1).png" class="card-img-top" alt="...">
         <div class="card-body">
             <h2 class="card-title">The Odyssey Program - P2P</h2>
         </div>
@@ -42,7 +42,7 @@
 
 <div class="col-md-4 caders coachprogramsbody">
     <div class="card success_card">
-        <img src="image/div.post-image (1).png" class="card-img-top" alt="...">
+        <img src="admin/pages/success_image/65186a3cbb657_div.post-image (1).png" class="card-img-top" alt="...">
         <div class="card-body">
             <h2 class="card-title">The Astral Program - Virtual</h2>
         </div>
