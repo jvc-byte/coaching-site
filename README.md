@@ -89,6 +89,6 @@ We welcome contributions to improve the platform. To contribute:
 
 ## Contact Information
 For any inquiries or support, please contact:
-- **Email:** [jvc8463@gmail.com](mailto:jvc8463@gmail.com)
+- **Email:** [jvc-byte](mailto:jvc8463@gmail.com)
 - **LinkedIn:** [jvc-byte](https://www.linkedin.com/in/jvc-byte)
 - **GitHub:** [jvc-byte](https://github.com/jvc-byte)
